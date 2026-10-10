@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>RoverMart | Scout Shop - Gear Up. Explore More. Serve Better.</title>
+  <meta name="description" content="Official Scout & Rover Scout gear, uniforms, neckerchiefs, woggles, badges, and camping essentials in Bangladesh. Direct WhatsApp ordering.">
+  <meta property="og:title" content="RoverMart | Scout Shop">
+  <meta property="og:description" content="Gear Up. Explore More. Serve Better. Complete scouting gear & uniforms.">
+  <meta property="og:image" content="1000121648-01.jpeg">
+  <meta property="og:type" content="website">
+
+  <!-- Browser Favicon using updated logo name -->
+  <link rel="icon" type="image/jpeg" href="1000121648-01.jpeg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f2f8f4',
+              100: '#e1efe4',
+              200: '#c3dfcb',
+              500: '#2f7447',
+              600: '#225936',
+              700: '#1b472c',
+              800: '#173924',
+              900: '#122c1d',
+              gold: '#d4a347',
+              goldhover: '#be8f36'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Hind Siliguri"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #f7f9f7;
+      color: #172a1e;
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hero-bg {
+      background: linear-gradient(135deg, #11291b 0%, #1a452a 50%, #215433 100%);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f2;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c3dfcb;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Announcement Bar -->
+  <aside aria-label="Notice" class="bg-brand-900 text-brand-100 text-[11px] sm:text-xs py-1.5 px-3 border-b border-brand-800">
+    <div class="max-w-7xl mx-auto flex justify-between items-center text-center">
+      <div class="flex items-center space-x-2 mx-auto sm:mx-0">
+        <span class="inline-block w-2 h-2 rounded-full bg-brand-gold animate-pulse shrink-0"></span>
+        <span class="tracking-wide truncate font-medium">স্বাগতম RoverMart-এ — "Gear Up. Explore More. Serve Better."</span>
+      </div>
+      <div class="hidden sm:flex items-center space-x-6 text-[11px] text-gray-300">
+        <span><i data-lucide="shield-check" class="w-3.5 h-3.5 inline text-brand-gold mr-1"></i> ভেরিফাইড কোয়ালিটি গিয়ার</span>
+        <span><i data-lucide="truck" class="w-3.5 h-3.5 inline text-brand-gold mr-1"></i> সারা দেশে দ্রুত ডেলিভারি</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Mobile-Optimized Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs border-b border-emerald-100/80 transition-all">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Logo & Brand Name -->
+        <a href="#hero-section" class="flex items-center space-x-2.5 sm:space-x-3.5 group shrink-0">
+          <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-brand-700 bg-white shadow-xs flex items-center justify-center p-0.5 group-hover:scale-105 transition-transform">
+            <img 
+              src="1000121648-01.jpeg" 
+              alt="RoverMart Scout Shop Logo" 
+              class="w-full h-full object-contain"
+              onerror="this.onerror=null; this.src='https://placehold.co/120x120/173924/d4a347?text=RM';"
+            >
+          </div>
+          <div>
+            <div class="flex items-center space-x-1.5">
+              <span class="text-lg sm:text-2xl font-extrabold tracking-tight text-brand-900 group-hover:text-brand-700 transition">ROVER<span class="text-brand-600">MART</span></span>
+              <span class="text-[9px] uppercase font-bold tracking-wider bg-brand-100 text-brand-800 px-1.5 py-0.5 rounded">SCOUT</span>
+            </div>
+            <p class="text-[9px] sm:text-[11px] font-semibold text-emerald-800/80 -mt-0.5 tracking-wider hidden xs:block">Gear Up • Explore More • Serve Better</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-gray-700">
+          <a href="#hero-section" class="hover:text-brand-600 transition">Home</a>
+          <a href="#products-section" class="hover:text-brand-600 transition">Shop Inventory</a>
+          <a href="#why-choose-us" class="hover:text-brand-600 transition">Why Us</a>
+          <a href="#contact-footer" class="hover:text-brand-600 transition">Contact</a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <!-- WhatsApp Quick Action (Desktop) -->
+          <button onclick="handleGeneralInquiry()" class="hidden sm:inline-flex items-center space-x-1.5 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200/90 px-3 py-2 rounded-xl text-xs font-bold transition">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+            <span>WhatsApp Help</span>
+          </button>
+
+          <!-- Cart Drawer Button (Optimized 44px+ touch target) -->
+          <button onclick="toggleCartDrawer(true)" aria-label="Open Shopping Bag" class="relative w-11 h-11 rounded-xl bg-brand-50 text-brand-800 hover:bg-brand-100 transition flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span id="header-cart-badge" class="absolute -top-1 -right-1 bg-brand-gold text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-md scale-0 transition-transform duration-200">0</span>
+          </button>
+
+          <!-- Mobile Drawer Toggle -->
+          <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="md:hidden w-11 h-11 flex items-center justify-center text-gray-700 hover:bg-gray-100 rounded-xl transition">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-5 py-3 space-y-1 shadow-md">
+      <a href="#hero-section" onclick="toggleMobileMenu()" class="block py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">Home</a>
+      <a href="#products-section" onclick="toggleMobileMenu()" class="block py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">Shop Inventory</a>
+      <a href="#why-choose-us" onclick="toggleMobileMenu()" class="block py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">Why Us</a>
+      <a href="#contact-footer" onclick="toggleMobileMenu()" class="block py-2.5 text-sm font-semibold text-gray-800">Contact & Support</a>
+      <div class="pt-2">
+        <button onclick="handleGeneralInquiry(); toggleMobileMenu();" class="w-full flex items-center justify-center space-x-2 bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Direct WhatsApp Order Desk</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero-section" class="relative hero-bg text-white overflow-hidden py-12 sm:py-20 px-4">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+
+    <div class="relative max-w-4xl mx-auto text-center space-y-4 sm:space-y-5">
+      <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/15 text-[11px] sm:text-xs text-brand-100 font-semibold shadow-xs">
+        <i data-lucide="compass" class="w-3.5 h-3.5 text-brand-gold"></i>
+        <span>স্কাউট ও রোভারদের বিশ্বস্ত ইকমার্স প্ল্যাটফর্ম</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.2]">
+        Everything a Scout Needs, <br class="hidden sm:inline">
+        <span class="text-brand-gold">All in One Place.</span>
+      </h1>
+
+      <p class="text-xs sm:text-base text-emerald-100/90 max-w-2xl mx-auto font-normal leading-relaxed">
+        ইউনিফর্ম, ব্যাজ, স্কার্ফ, ক্যারাবিনার ও ক্যাম্পিং ইকুইপমেন্ট। ঘরে বসেই সরাসরি WhatsApp-এর মাধ্যমে ঝামেলাহীনভাবে অর্ডার করুন।
+      </p>
+
+      <div class="flex flex-row items-center justify-center gap-2.5 sm:gap-4 pt-1">
+        <a href="#products-section" class="flex-1 sm:flex-none inline-flex items-center justify-center space-x-1.5 bg-brand-gold hover:bg-brand-goldhover text-brand-900 font-extrabold px-5 sm:px-7 py-3 rounded-xl shadow-lg transition text-xs sm:text-sm active:scale-95">
+          <span>পণ্যসমূহ দেখুন</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+        <button onclick="handleGeneralInquiry()" class="flex-1 sm:flex-none inline-flex items-center justify-center space-x-1.5 bg-white/10 hover:bg-white/20 text-white font-semibold px-4 sm:px-6 py-3 rounded-xl border border-white/20 transition text-xs sm:text-sm active:scale-95">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>WhatsApp ইনকোয়ারি</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Catalog Section -->
+  <section id="products-section" class="py-8 sm:py-14 bg-white border-t border-emerald-50">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="mb-4 sm:mb-6 flex items-end justify-between">
+        <div>
+          <span class="text-[10px] sm:text-xs font-bold text-brand-600 tracking-wider uppercase bg-brand-50 px-2.5 py-1 rounded-md">ROVERMART INVENTORY</span>
+          <h2 class="text-xl sm:text-3xl font-extrabold text-brand-900 tracking-tight mt-1">Featured Scout Gear & Essentials</h2>
+        </div>
+        <p id="product-count-label" class="text-[11px] sm:text-xs text-gray-500 font-semibold shrink-0">12 Items</p>
+      </div>
+
+      <!-- Professional Single-Line Filter Bar (Mobile Horizontal Touch Strip) -->
+      <div class="bg-gray-50/90 border border-gray-200 rounded-2xl p-2 sm:p-3 mb-6 sm:mb-8 shadow-xs">
+        <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-0.5">
+          
+          <!-- 1. Search Box -->
+          <div class="relative min-w-[170px] xs:min-w-[200px] sm:min-w-[240px] flex-1">
+            <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input 
+              type="text" 
+              id="catalog-search" 
+              oninput="handleSearchFilter()" 
+              placeholder="পণ্য খুঁজুন (Shirt, Scarf...)" 
+              class="w-full pl-8 sm:pl-9 pr-3 py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent transition shadow-2xs"
+            >
+          </div>
+
+          <!-- 2. Category Dropdown -->
+          <div class="w-[135px] sm:w-[190px] shrink-0">
+            <select 
+              id="catalog-category-filter" 
+              onchange="handleSearchFilter()" 
+              class="w-full px-2.5 sm:px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-600 shadow-2xs cursor-pointer truncate"
+            >
+              <option value="all">সব ক্যাটাগরি (All)</option>
+              <option value="uniforms">Scout Uniforms</option>
+              <option value="badges">Badges & Insignia</option>
+              <option value="scarves">Scarves & Neckerchiefs</option>
+              <option value="accessories">Belts & Accessories</option>
+              <option value="camping">Camping Equipment</option>
+              <option value="pioneering">Ropes & Pioneering</option>
+              <option value="bags">Bags & Backpacks</option>
+              <option value="firstaid">First Aid & Essentials</option>
+              <option value="gifts">Gifts & Souvenirs</option>
+            </select>
+          </div>
+
+          <!-- 3. Sort Dropdown -->
+          <div class="w-[115px] sm:w-[160px] shrink-0">
+            <select 
+              id="catalog-sort" 
+              onchange="handleSearchFilter()" 
+              class="w-full px-2.5 sm:px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-600 shadow-2xs cursor-pointer"
+            >
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low-High</option>
+              <option value="price-desc">Price: High-Low</option>
+              <option value="name-asc">Name: A-Z</option>
+            </select>
+          </div>
+
+          <!-- 4. "All Items" Button (Always neatly integrated at the far right) -->
+          <div class="shrink-0">
+            <button 
+              onclick="resetToAllItems()" 
+              id="btn-all-items" 
+              class="h-9 sm:h-10 px-3.5 sm:px-5 rounded-xl text-xs sm:text-sm font-bold bg-brand-800 hover:bg-brand-900 active:scale-95 text-white shadow-xs transition flex items-center space-x-1.5 whitespace-nowrap"
+            >
+              <i data-lucide="layers" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-gold"></i>
+              <span>All Items</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Products Grid: 2-Columns on Mobile for Native E-commerce Feel -->
+      <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Empty Catalog State -->
+      <div id="catalog-empty-state" class="hidden text-center py-12 px-4 bg-gray-50 rounded-2xl border border-dashed border-gray-300">
+        <i data-lucide="package-search" class="w-10 h-10 text-gray-400 mx-auto mb-2"></i>
+        <h3 class="text-sm sm:text-base font-bold text-gray-800">কোনো পণ্য খুঁজে পাওয়া যায়নি</h3>
+        <p class="text-xs text-gray-500 mt-1 max-w-sm mx-auto">ভিন্ন কোনো নাম লিখে খুঁজুন অথবা "All Items" বাটনে ট্যাপ করুন।</p>
+        <button onclick="resetToAllItems()" class="mt-3.5 px-4 py-2 bg-brand-800 text-white rounded-xl text-xs font-semibold hover:bg-brand-900 transition">
+          সকল পণ্য দেখুন
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us" class="py-10 sm:py-14 bg-brand-50/50 border-t border-brand-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+        <h2 class="text-xl sm:text-2xl font-black text-brand-900">কেন RoverMart থেকে নেবেন?</h2>
+        <p class="text-xs text-gray-600 mt-1">স্কাউটিং মূল্যবোধ ও সেবার মানসিকতা নিয়ে প্রতিটি পণ্যের সর্বোচ্চ যত্ন নেওয়া হয়।</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-emerald-100 shadow-2xs">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-2.5">
+            <i data-lucide="award" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-0.5">Scout-Focused</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">স্কাউট ও রোভারদের সুনির্দিষ্ট প্রয়োজন ও মাপ অনুযায়ী সামগ্রী।</p>
+        </div>
+
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-emerald-100 shadow-2xs">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-2.5">
+            <i data-lucide="compass" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-0.5">Durable & Tested</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">হাইকিং, ক্যাম্পিং ও ট্রেনিংয়ের উপযোগী টেকসই গিয়ার।</p>
+        </div>
+
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-emerald-100 shadow-2xs">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-2.5">
+            <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-0.5">WhatsApp Checkout</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">কার্ড ছাড়াই সরাসরি WhatsApp মেসেজের মাধ্যমে সহজ অর্ডার।</p>
+        </div>
+
+        <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-emerald-100 shadow-2xs">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-2.5">
+            <i data-lucide="heart-handshake" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-0.5">Service Inspired</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">বন্ধুত্বপূর্ণ সেবা ও স্কাউট ভ্রাতৃত্ববোধের আদর্শে পরিচালিত।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Updated Logo -->
+  <footer id="contact-footer" class="bg-brand-900 text-white pt-10 sm:pt-14 pb-8 border-t border-brand-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 pb-8 border-b border-brand-800">
+        
+        <!-- Brand Info -->
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden border border-brand-gold bg-white p-0.5 flex items-center justify-center">
+              <img src="1000121648-01.jpeg" alt="RoverMart Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-lg font-black tracking-tight text-white">ROVERMART</span>
+          </div>
+          <p class="text-xs text-emerald-200/80 leading-relaxed">
+            স্কাউট, রোভার ও আউটডোর অভিযাত্রীদের জন্য নির্ভরযোগ্য অনলাইন স্টোর।
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2.5">নেভিগেশন</h4>
+          <ul class="space-y-1.5 text-xs text-emerald-100/80">
+            <li><a href="#hero-section" class="hover:text-white transition">হোমপেইজ</a></li>
+            <li><a href="#products-section" class="hover:text-white transition">সকল পণ্য</a></li>
+            <li><a href="#why-choose-us" class="hover:text-white transition">আমাদের সম্পর্কে</a></li>
+          </ul>
+        </div>
+
+        <!-- Popular Categories -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2.5">জনপ্রিয় ক্যাটাগরি</h4>
+          <ul class="space-y-1.5 text-xs text-emerald-100/80">
+            <li><a href="#products-section" onclick="filterByCat('uniforms')" class="hover:text-white transition">Scout Uniforms</a></li>
+            <li><a href="#products-section" onclick="filterByCat('scarves')" class="hover:text-white transition">Scarves & Woggles</a></li>
+            <li><a href="#products-section" onclick="filterByCat('camping')" class="hover:text-white transition">Camping Gear</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Support -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2.5">যোগাযোগ ও হেল্পডেস্ক</h4>
+          <p class="text-xs text-emerald-200/90 mb-2.5">সরাসরি WhatsApp-এ কথা বলুন:</p>
+          <button onclick="handleGeneralInquiry()" class="inline-flex items-center space-x-2 bg-emerald-700 hover:bg-emerald-600 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition shadow-xs">
+            <i data-lucide="message-square" class="w-4 h-4 text-emerald-200"></i>
+            <span id="footer-wa-number-display">+880 1836-815349</span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center text-[10px] sm:text-[11px] text-emerald-300/70 gap-2">
+        <p>&copy; <span id="current-year"></span> RoverMart Scout Shop. Gear Up. Explore More. Serve Better.</p>
+        <p>Static Architecture • GitHub Pages Ready</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <div class="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40">
+    <button 
+      onclick="handleGeneralInquiry()" 
+      aria-label="WhatsApp Helpline" 
+      class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold p-3 sm:px-4 sm:py-3 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95 border-2 border-white/20"
+    >
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span class="text-xs tracking-wide hidden sm:inline">WhatsApp Order Desk</span>
+    </button>
+  </div>
+
+  <!-- Dual Action Order Modal (Bottom-Sheet styled on mobile) -->
+  <div id="order-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
+    <div class="bg-white rounded-t-3xl sm:rounded-2xl max-w-md w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in zoom-in-95 duration-150 max-h-[92vh] flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="px-4 sm:px-5 py-3.5 bg-brand-900 text-white flex items-center justify-between shrink-0">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="shopping-cart" class="w-4 h-4 text-brand-gold"></i>
+          <h3 class="text-xs sm:text-sm font-bold">পণ্য অর্ডার করুন</h3>
+        </div>
+        <button onclick="closeOrderModal()" class="text-gray-300 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-4 sm:p-5 overflow-y-auto custom-scrollbar">
+        <!-- Item Snapshot -->
+        <div class="flex space-x-3 mb-4 bg-gray-50 p-2.5 rounded-xl border border-gray-100">
+          <img id="modal-product-img" src="" alt="Product" class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover border border-gray-200 shrink-0">
+          <div class="min-w-0 flex-1">
+            <span id="modal-product-cat" class="text-[9px] uppercase font-bold text-brand-600 tracking-wider">CATEGORY</span>
+            <h4 id="modal-product-name" class="text-xs sm:text-sm font-bold text-gray-900 leading-snug truncate">Product Name</h4>
+            <div class="flex items-baseline space-x-2 mt-1">
+              <span id="modal-product-price" class="text-base sm:text-lg font-black text-brand-900">৳0</span>
+              <span id="modal-product-old-price" class="text-xs text-gray-400 line-through"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Variant Selector -->
+        <div id="modal-variant-container" class="mb-3.5">
+          <label class="block text-xs font-semibold text-gray-700 mb-1.5">সাইজ / ভ্যারিয়েন্ট নির্বাচন করুন:</label>
+          <div id="modal-variant-options" class="flex flex-wrap gap-1.5 sm:gap-2"></div>
+        </div>
+
+        <!-- Quantity Picker -->
+        <div class="flex items-center justify-between bg-gray-50 p-2.5 rounded-xl border border-gray-200 mb-4">
+          <span class="text-xs font-semibold text-gray-700">পরিমাণ (Quantity):</span>
+          <div class="flex items-center space-x-2.5">
+            <button onclick="changeModalQty(-1)" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-gray-700 font-bold active:bg-gray-100">-</button>
+            <span id="modal-qty" class="text-sm font-black w-6 text-center text-gray-900">1</span>
+            <button onclick="changeModalQty(1)" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-gray-700 font-bold active:bg-gray-100">+</button>
+          </div>
+        </div>
+
+        <!-- Subtotal Preview -->
+        <div class="flex justify-between items-center text-xs text-gray-500 mb-4 pb-2 border-b border-gray-100">
+          <span>সাব-টোটাল:</span>
+          <span id="modal-subtotal" class="text-sm font-bold text-brand-900">৳0</span>
+        </div>
+
+        <!-- Dual Action Buttons -->
+        <div class="grid grid-cols-2 gap-2.5">
+          <button onclick="confirmAddToCart()" class="w-full py-2.5 sm:py-3 px-3 rounded-xl border-2 border-brand-700 text-brand-800 hover:bg-brand-50 active:scale-95 text-xs font-bold transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>Add to Cart</span>
+          </button>
+          <button onclick="confirmDirectBuyNow()" class="w-full py-2.5 sm:py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs font-bold shadow-md transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="zap" class="w-4 h-4"></i>
+            <span>Buy Now</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Slide Drawer -->
+  <div id="cart-drawer-overlay" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/50 z-50 backdrop-blur-xs hidden transition-opacity"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full sm:w-96 bg-white z-50 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="px-4 sm:px-5 py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
+      <div class="flex items-center space-x-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-gold"></i>
+        <h3 class="text-sm font-bold">Shopping Cart (<span id="cart-item-count">0</span>)</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="text-gray-300 hover:text-white p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Scrollable Items List -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-3.5 space-y-2.5 custom-scrollbar"></div>
+
+    <!-- Cart Footer & Checkout Trigger -->
+    <div id="cart-footer" class="p-4 bg-gray-50 border-t border-gray-200 shrink-0">
+      <div class="flex justify-between items-center text-sm font-bold text-gray-900 mb-1">
+        <span>সাবটোটাল:</span>
+        <span id="cart-subtotal-display" class="text-brand-900 text-base font-black">৳0</span>
+      </div>
+      <p class="text-[10px] text-gray-500 mb-3.5">ডেলিভারি চার্জ WhatsApp-এ আলোচনা সাপেক্ষে নির্ধারিত হবে।</p>
+      
+      <button onclick="openCheckoutModal()" class="w-full py-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white text-xs font-bold flex items-center justify-center space-x-2 shadow-md transition active:scale-95">
+        <span>অর্ডার কনফার্ম করুন (Checkout)</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Information Modal -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white rounded-t-3xl sm:rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in duration-150 max-h-[92vh] flex flex-col">
+      <div class="px-4 sm:px-5 py-3.5 bg-brand-900 text-white flex items-center justify-between shrink-0">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="clipboard-check" class="w-4 h-4 text-brand-gold"></i>
+          <h3 class="text-xs sm:text-sm font-bold">ডেলিভারি তথ্য দিন</h3>
+        </div>
+        <button onclick="closeCheckoutModal()" class="text-gray-300 hover:text-white p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="checkout-form" onsubmit="handleFinalWhatsAppOrder(event)" class="p-4 sm:p-5 space-y-3 overflow-y-auto custom-scrollbar">
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">আপনার নাম (Full Name) *</label>
+          <input type="text" id="cust-name" required placeholder="যেমন: তানভীর আহমেদ" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1">মোবাইল নম্বর (11 Digit) *</label>
+            <input type="tel" id="cust-phone" required pattern="01[3-9][0-9]{8}" placeholder="01XXXXXXXXX" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1">জেলা / শহর (District/City) *</label>
+            <input type="text" id="cust-city" required placeholder="ঢাকা / চট্টগ্রাম / সিলেট" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">সম্পূর্ণ ঠিকানা (Full Address) *</label>
+          <textarea id="cust-address" required rows="2" placeholder="বাড়ি নং, রোড নং, থানা/উপজেলা..." class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">বিশেষ নির্দেশ / Troop Info (ঐচ্ছিক)</label>
+          <input type="text" id="cust-notes" placeholder="নির্দিষ্ট মাপ বা ট্রুপের নাম" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl text-[11px] text-emerald-800 flex items-start space-x-2">
+          <i data-lucide="info" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span>"Send Order via WhatsApp" বাটনে ট্যাপ করলে প্রস্তুতকৃত অর্ডারটি সহ সরাসরি WhatsApp চ্যাট ওপেন হবে।</span>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-md transition active:scale-95">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Send Order via WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Message -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-brand-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xl flex items-center space-x-2 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-3">
+    <i data-lucide="check" class="w-4 h-4 text-brand-gold"></i>
+    <span id="toast-message">Notification</span>
+  </div>
+
+  <script>
+    /**
+     * RoverMart Scout Shop - Core Logic
+     */
+    const SHOP_CONFIG = {
+      name: "RoverMart Scout Shop",
+      whatsappNumber: "8801836815349",
+      currencySymbol: "৳"
+    };
+
+    const PRODUCTS = [
+      {
+        id: "RM-UNI-01",
+        name: "Standard Scout / Rover Uniform Shirt",
+        category: "uniforms",
+        categoryLabel: "Uniforms",
+        price: 850,
+        oldPrice: 950,
+        variants: ["Size 38", "Size 40", "Size 42", "Size 44"],
+        tag: "FEATURED",
+        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&auto=format&fit=crop&q=80",
+        desc: "Durable cotton-blend scouting shirt with dual buttoned flap pockets and epaulets."
+      },
+      {
+        id: "RM-UNI-02",
+        name: "Olive Green Scout Trousers",
+        category: "uniforms",
+        categoryLabel: "Uniforms",
+        price: 950,
+        oldPrice: 1100,
+        variants: ["Waist 30", "Waist 32", "Waist 34", "Waist 36"],
+        tag: "POPULAR",
+        image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&auto=format&fit=crop&q=80",
+        desc: "Heavy-duty ripstop trousers tailored with deep side pockets and scout belt loops."
+      },
+      {
+        id: "RM-SCF-01",
+        name: "Tri-Color Patrol Neckerchief / Scarf",
+        category: "scarves",
+        categoryLabel: "Scarves",
+        price: 220,
+        variants: ["Standard Size"],
+        tag: "BEST SELLER",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80",
+        desc: "Finely stitched triangular neckerchief with neat color border trimming."
+      },
+      {
+        id: "RM-WOG-01",
+        name: "Handmade Leather Gilwell Woggle",
+        category: "scarves",
+        categoryLabel: "Scarves",
+        price: 180,
+        variants: ["Brown Leather", "Tan Leather"],
+        tag: "ESSENTIAL",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=80",
+        desc: "Traditional Turks Head woven leather scarf woggle designed for secure fit."
+      },
+      {
+        id: "RM-ACC-01",
+        name: "Official Scout Webbing Belt & Buckle",
+        category: "accessories",
+        categoryLabel: "Accessories",
+        price: 320,
+        variants: ["Adjustable Free Size"],
+        tag: "",
+        image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=600&auto=format&fit=crop&q=80",
+        desc: "Sturdy woven canvas belt with vintage antique brass friction buckle."
+      },
+      {
+        id: "RM-CMP-01",
+        name: "Dome Camp Tent (2-3 Persons)",
+        category: "camping",
+        categoryLabel: "Camping",
+        price: 3450,
+        oldPrice: 3800,
+        variants: ["Forest Green", "Royal Blue"],
+        tag: "CAMP GEAR",
+        image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&auto=format&fit=crop&q=80",
+        desc: "Weatherproof polyester camping tent with fiberglass poles, rainfly, and pouch."
+      },
+      {
+        id: "RM-CMP-02",
+        name: "Compact Stainless Steel Mess Kit",
+        category: "camping",
+        categoryLabel: "Camping",
+        price: 750,
+        variants: ["1-Person Kit"],
+        tag: "",
+        image: "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?w=600&auto=format&fit=crop&q=80",
+        desc: "Interlocking camping plate, bowl, and cup crafted from food-grade steel."
+      },
+      {
+        id: "RM-ROPE-01",
+        name: "Pioneering Jute Manilla Rope (10m Coil)",
+        category: "pioneering",
+        categoryLabel: "Pioneering",
+        price: 280,
+        variants: ["6mm Thickness", "8mm Thickness"],
+        tag: "PIONEERING",
+        image: "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=600&auto=format&fit=crop&q=80",
+        desc: "Natural fiber rope with high friction hold, ideal for lashings."
+      },
+      {
+        id: "RM-BAG-01",
+        name: "Expedition Tactical Rucksack (45L)",
+        category: "bags",
+        categoryLabel: "Backpacks",
+        price: 2450,
+        oldPrice: 2800,
+        variants: ["Olive Drab", "Camo Green"],
+        tag: "POPULAR",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=80",
+        desc: "Multi-pocket hiking backpack with ergonomic lumbar support straps."
+      },
+      {
+        id: "RM-MED-01",
+        name: "Patrol First Aid Field Pouch",
+        category: "firstaid",
+        categoryLabel: "First Aid",
+        price: 680,
+        variants: ["Standard Pack"],
+        tag: "SAFETY",
+        image: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=600&auto=format&fit=crop&q=80",
+        desc: "Emergency roll-up first aid kit including sterile bandages and scissors."
+      },
+      {
+        id: "RM-BDG-01",
+        name: "Custom Troop Embroidered Shoulder Arc",
+        category: "badges",
+        categoryLabel: "Badges",
+        price: 90,
+        variants: ["Custom Embroidered"],
+        tag: "",
+        image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=80",
+        desc: "High-density thread embroidered shoulder nametags and district unit patches."
+      },
+      {
+        id: "RM-GFT-01",
+        name: "Brass Pocket Compass with Lanyard",
+        category: "gifts",
+        categoryLabel: "Gifts",
+        price: 450,
+        variants: ["Classic Brass"],
+        tag: "SOUVENIR",
+        image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&auto=format&fit=crop&q=80",
+        desc: "Functional navigational magnetic pocket compass in antique brass casing."
+      }
+    ];
+
+    let cart = [];
+    let activeModalProduct = null;
+    let selectedModalVariant = "";
+    let modalQuantity = 1;
+
+    function loadSavedCart() {
+      try {
+        const saved = localStorage.getItem("rovermart_cart");
+        if (saved) cart = JSON.parse(saved);
+      } catch (e) {
+        cart = [];
+      }
+      updateCartBadge();
+    }
+
+    function saveCart() {
+      localStorage.setItem("rovermart_cart", JSON.stringify(cart));
+      updateCartBadge();
+    }
+
+    function renderProducts(items) {
+      const grid = document.getElementById("products-grid");
+      const emptyState = document.getElementById("catalog-empty-state");
+      const countLabel = document.getElementById("product-count-label");
+
+      countLabel.textContent = `${items.length} Items`;
+
+      if (items.length === 0) {
+        grid.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        return;
+      }
+
+      emptyState.classList.add("hidden");
+      grid.innerHTML = items.map(p => `
+        <div class="group bg-white rounded-xl sm:rounded-2xl border border-gray-200/80 hover:border-brand-300 overflow-hidden shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <!-- Image Frame -->
+            <div class="relative w-full aspect-square bg-gray-100 overflow-hidden">
+              <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              ${p.tag ? `<span class="absolute top-2 left-2 bg-brand-900/90 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded tracking-wide uppercase shadow-xs">${p.tag}</span>` : ''}
+              <span class="absolute top-2 right-2 bg-white/95 text-brand-900 text-[9px] font-bold px-1.5 py-0.5 rounded shadow-2xs">${p.categoryLabel}</span>
+            </div>
+
+            <!-- Content Details -->
+            <div class="p-2.5 sm:p-4">
+              <h3 class="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-brand-700 transition line-clamp-1 leading-snug">${p.name}</h3>
+              <p class="text-[11px] text-gray-500 mt-0.5 sm:mt-1 line-clamp-2 leading-tight hidden xs:block">${p.desc}</p>
+            </div>
+          </div>
+
+          <!-- Price & Action Trigger -->
+          <div class="px-2.5 pb-2.5 sm:px-4 sm:pb-4 pt-1 border-t border-gray-100 flex items-center justify-between gap-1.5">
+            <div>
+              <div class="text-xs sm:text-base font-extrabold text-brand-900 leading-none">${SHOP_CONFIG.currencySymbol}${p.price}</div>
+              ${p.oldPrice ? `<div class="text-[10px] sm:text-xs text-gray-400 line-through mt-0.5">${SHOP_CONFIG.currencySymbol}${p.oldPrice}</div>` : ''}
+            </div>
+            <button 
+              onclick="openOrderModal('${p.id}')" 
+              class="inline-flex items-center space-x-1 bg-brand-800 hover:bg-brand-700 active:scale-95 text-white text-[11px] sm:text-xs font-bold px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl transition shadow-xs"
+              aria-label="Order ${p.name}"
+            >
+              <span>Order</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+            </button>
+          </div>
+        </div>
+      `).join("");
+
+      lucide.createIcons();
+    }
+
+    function handleSearchFilter() {
+      const query = document.getElementById("catalog-search").value.toLowerCase().trim();
+      const cat = document.getElementById("catalog-category-filter").value;
+      const sort = document.getElementById("catalog-sort").value;
+
+      let filtered = PRODUCTS.filter(item => {
+        const matchesQuery = item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query) || item.categoryLabel.toLowerCase().includes(query);
+        const matchesCat = (cat === "all") || (item.category === cat);
+        return matchesQuery && matchesCat;
+      });
+
+      if (sort === "price-asc") {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sort === "price-desc") {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sort === "name-asc") {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      renderProducts(filtered);
+    }
+
+    function resetToAllItems() {
+      document.getElementById("catalog-search").value = "";
+      document.getElementById("catalog-category-filter").value = "all";
+      document.getElementById("catalog-sort").value = "featured";
+      renderProducts(PRODUCTS);
+      showToast("Showing all scout gear");
+    }
+
+    function filterByCat(catId) {
+      document.getElementById("catalog-category-filter").value = catId;
+      document.getElementById("catalog-search").value = "";
+      handleSearchFilter();
+    }
+
+    function openOrderModal(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      activeModalProduct = product;
+      modalQuantity = 1;
+      selectedModalVariant = product.variants && product.variants.length > 0 ? product.variants[0] : "Standard";
+
+      document.getElementById("modal-product-img").src = product.image;
+      document.getElementById("modal-product-cat").textContent = product.categoryLabel;
+      document.getElementById("modal-product-name").textContent = product.name;
+      document.getElementById("modal-product-price").textContent = `${SHOP_CONFIG.currencySymbol}${product.price}`;
+      
+      const oldPriceEl = document.getElementById("modal-product-old-price");
+      if (product.oldPrice) {
+        oldPriceEl.textContent = `${SHOP_CONFIG.currencySymbol}${product.oldPrice}`;
+        oldPriceEl.classList.remove("hidden");
+      } else {
+        oldPriceEl.classList.add("hidden");
+      }
+
+      const variantContainer = document.getElementById("modal-variant-container");
+      const variantOptions = document.getElementById("modal-variant-options");
+      
+      if (product.variants && product.variants.length > 0) {
+        variantContainer.classList.remove("hidden");
+        variantOptions.innerHTML = product.variants.map((v, i) => `
+          <button type="button" onclick="selectModalVariant('${v}')" class="variant-pill px-2.5 py-1 rounded-lg border text-[11px] sm:text-xs font-semibold transition ${i === 0 ? 'bg-brand-800 text-white border-brand-800' : 'bg-gray-50 text-gray-700 border-gray-200'}">
+            ${v}
+          </button>
+        `).join("");
+      } else {
+        variantContainer.classList.add("hidden");
+      }
+
+      updateModalQtyDisplay();
+      document.getElementById("order-modal").classList.remove("hidden");
+      lucide.createIcons();
+    }
+
+    function closeOrderModal() {
+      document.getElementById("order-modal").classList.add("hidden");
+      activeModalProduct = null;
+    }
+
+    function selectModalVariant(variantName) {
+      selectedModalVariant = variantName;
+      const pills = document.querySelectorAll(".variant-pill");
+      pills.forEach(pill => {
+        if (pill.textContent.trim() === variantName) {
+          pill.className = "variant-pill px-2.5 py-1 rounded-lg border text-[11px] sm:text-xs font-semibold transition bg-brand-800 text-white border-brand-800";
+        } else {
+          pill.className = "variant-pill px-2.5 py-1 rounded-lg border text-[11px] sm:text-xs font-semibold transition bg-gray-50 text-gray-700 border-gray-200";
+        }
+      });
+    }
+
+    function changeModalQty(delta) {
+      modalQuantity = Math.max(1, modalQuantity + delta);
+      updateModalQtyDisplay();
+    }
+
+    function updateModalQtyDisplay() {
+      document.getElementById("modal-qty").textContent = modalQuantity;
+      if (activeModalProduct) {
+        const subtotal = activeModalProduct.price * modalQuantity;
+        document.getElementById("modal-subtotal").textContent = `${SHOP_CONFIG.currencySymbol}${subtotal}`;
+      }
+    }
+
+    function confirmAddToCart() {
+      if (!activeModalProduct) return;
+
+      const existingIndex = cart.findIndex(item => item.id === activeModalProduct.id && item.variant === selectedModalVariant);
+
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += modalQuantity;
+      } else {
+        cart.push({
+          id: activeModalProduct.id,
+          name: activeModalProduct.name,
+          price: activeModalProduct.price,
+          image: activeModalProduct.image,
+          variant: selectedModalVariant,
+          quantity: modalQuantity
+        });
+      }
+
+      saveCart();
+      closeOrderModal();
+      showToast("পণ্যটি কার্টে যোগ করা হয়েছে!");
+      toggleCartDrawer(true);
+    }
+
+    function confirmDirectBuyNow() {
+      if (!activeModalProduct) return;
+
+      const orderRef = "RM-" + Math.floor(100000 + Math.random() * 900000);
+      const subtotal = activeModalProduct.price * modalQuantity;
+
+      const message = `*SCOUT SHOP — DIRECT BUY NOW*\n` +
+        `------------------------------------\n` +
+        `*Order Reference:* ${orderRef}\n` +
+        `*Product:* ${activeModalProduct.name}\n` +
+        `*Product ID:* ${activeModalProduct.id}\n` +
+        `*Variant/Size:* ${selectedModalVariant}\n` +
+        `*Quantity:* ${modalQuantity}\n` +
+        `*Unit Price:* ${SHOP_CONFIG.currencySymbol}${activeModalProduct.price}\n` +
+        `*Total Subtotal:* ${SHOP_CONFIG.currencySymbol}${subtotal}\n` +
+        `------------------------------------\n` +
+        `অনুগ্রহ করে পণ্যটির প্রাপ্যতা ও ডেলিভারি নিশ্চিত করুন। ধন্যবাদ!`;
+
+      const whatsappUrl = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+      closeOrderModal();
+      window.open(whatsappUrl, "_blank");
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById("cart-drawer");
+      const overlay = document.getElementById("cart-drawer-overlay");
+
+      if (open) {
+        renderCartItems();
+        drawer.classList.remove("translate-x-full");
+        overlay.classList.remove("hidden");
+      } else {
+        drawer.classList.add("translate-x-full");
+        overlay.classList.add("hidden");
+      }
+    }
+
+    function renderCartItems() {
+      const container = document.getElementById("cart-items-container");
+      const footer = document.getElementById("cart-footer");
+      const countEl = document.getElementById("cart-item-count");
+      
+      const totalCount = cart.reduce((sum, i) => sum + i.quantity, 0);
+      countEl.textContent = totalCount;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-gray-400">
+            <i data-lucide="shopping-bag" class="w-10 h-10 mx-auto mb-2 opacity-50"></i>
+            <p class="text-xs font-bold text-gray-700">আপনার কার্ট খালি</p>
+            <p class="text-[11px] text-gray-400 mt-0.5">ক্যাটালগ থেকে যেকোনো পণ্য যোগ করুন</p>
+          </div>
+        `;
+        footer.classList.add("hidden");
+        lucide.createIcons();
+        return;
+      }
+
+      footer.classList.remove("hidden");
+      let subtotal = 0;
+
+      container.innerHTML = cart.map((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        return `
+          <div class="flex items-center space-x-2.5 p-2.5 bg-gray-50 rounded-xl border border-gray-100">
+            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-cover border border-gray-200 shrink-0">
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-gray-900 truncate">${item.name}</h4>
+              <p class="text-[10px] text-gray-500">${item.variant} • ${SHOP_CONFIG.currencySymbol}${item.price}</p>
+              <div class="flex items-center space-x-1.5 mt-1.5">
+                <button onclick="updateCartItemQty(${index}, -1)" class="w-5 h-5 rounded bg-white border border-gray-200 text-xs font-bold flex items-center justify-center text-gray-700">-</button>
+                <span class="text-xs font-black text-gray-900 px-1">${item.quantity}</span>
+                <button onclick="updateCartItemQty(${index}, 1)" class="w-5 h-5 rounded bg-white border border-gray-200 text-xs font-bold flex items-center justify-center text-gray-700">+</button>
+              </div>
+            </div>
+            <div class="text-right flex flex-col justify-between items-end h-12">
+              <button onclick="removeCartItem(${index})" class="text-gray-400 hover:text-red-600 p-0.5">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              </button>
+              <span class="text-xs font-black text-brand-900">${SHOP_CONFIG.currencySymbol}${itemTotal}</span>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("cart-subtotal-display").textContent = `${SHOP_CONFIG.currencySymbol}${subtotal}`;
+      lucide.createIcons();
+    }
+
+    function updateCartItemQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCart();
+      renderCartItems();
+    }
+
+    function removeCartItem(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCartItems();
+    }
+
+    function updateCartBadge() {
+      const badge = document.getElementById("header-cart-badge");
+      const totalCount = cart.reduce((sum, i) => sum + i.quantity, 0);
+      badge.textContent = totalCount;
+      if (totalCount > 0) {
+        badge.classList.remove("scale-0");
+        badge.classList.add("scale-100");
+      } else {
+        badge.classList.remove("scale-100");
+        badge.classList.add("scale-0");
+      }
+    }
+
+    function openCheckoutModal() {
+      if (cart.length === 0) return;
+      toggleCartDrawer(false);
+      document.getElementById("checkout-modal").classList.remove("hidden");
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById("checkout-modal").classList.add("hidden");
+    }
+
+    function handleFinalWhatsAppOrder(e) {
+      e.preventDefault();
+
+      if (cart.length === 0) {
+        alert("আপনার কার্ট খালি!");
+        return;
+      }
+
+      const name = document.getElementById("cust-name").value.trim();
+      const phone = document.getElementById("cust-phone").value.trim();
+      const city = document.getElementById("cust-city").value.trim();
+      const address = document.getElementById("cust-address").value.trim();
+      const notes = document.getElementById("cust-notes").value.trim();
+
+      const orderRef = "RM-" + Math.floor(100000 + Math.random() * 900000);
+      let calculatedSubtotal = 0;
+
+      let itemsText = "";
+      cart.forEach((item, i) => {
+        const itemSub = item.price * item.quantity;
+        calculatedSubtotal += itemSub;
+        itemsText += `${i + 1}. *${item.name}*\n` +
+                     `   • ID: ${item.id}\n` +
+                     `   • Variant: ${item.variant}\n` +
+                     `   • Qty: ${item.quantity}\n` +
+                     `   • Unit Price: ${SHOP_CONFIG.currencySymbol}${item.price}\n` +
+                     `   • Subtotal: ${SHOP_CONFIG.currencySymbol}${itemSub}\n\n`;
+      });
+
+      const message = `*SCOUT SHOP — NEW ORDER*\n` +
+        `------------------------------------\n` +
+        `*Order Reference:* ${orderRef}\n` +
+        `*Customer Name:* ${name}\n` +
+        `*Mobile:* ${phone}\n` +
+        `*City/District:* ${city}\n` +
+        `*Delivery Address:* ${address}\n` +
+        (notes ? `*Customer Notes:* ${notes}\n` : '') +
+        `------------------------------------\n` +
+        `*ORDER ITEMS:*\n\n` +
+        itemsText +
+        `------------------------------------\n` +
+        `*ORDER SUMMARY:*\n` +
+        `*Subtotal:* ${SHOP_CONFIG.currencySymbol}${calculatedSubtotal}\n` +
+        `*Delivery Charge:* To Be Confirmed\n` +
+        `*Grand Total:* ${SHOP_CONFIG.currencySymbol}${calculatedSubtotal} (+ Delivery Charge)\n` +
+        `------------------------------------\n` +
+        `Please confirm product availability and final delivery details. Thank you!`;
+
+      const whatsappUrl = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+      closeCheckoutModal();
+      window.open(whatsappUrl, "_blank");
+    }
+
+    function handleGeneralInquiry() {
+      const msg = `আসসালামু আলাইকুম! RoverMart Scout Shop সম্পর্কে বিস্তারিত জানতে যোগাযোগ করছি।`;
+      const url = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobile-nav-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      document.getElementById("toast-message").textContent = message;
+      toast.classList.remove("opacity-0", "translate-y-3", "pointer-events-none");
+      toast.classList.add("opacity-100", "translate-y-0");
+
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-3", "pointer-events-none");
+        toast.classList.remove("opacity-100", "translate-y-0");
+      }, 3000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+      loadSavedCart();
+      renderProducts(PRODUCTS);
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
