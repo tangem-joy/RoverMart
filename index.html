@@ -111,17 +111,27 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-700">
+        <!-- Desktop Navigation Links (Tracking বাটন যুক্ত) -->
+        <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-gray-700">
           <a href="#hero-section" class="hover:text-brand-600 transition">Home</a>
           <a href="#scouting-progress" class="hover:text-brand-600 transition">Progress</a>
           <a href="#products-section" class="hover:text-brand-600 transition">Shop Inventory</a>
           <a href="#why-choose-us" class="hover:text-brand-600 transition">Why Us</a>
+          <button onclick="toggleTrackingModal(true)" class="hover:text-brand-600 text-brand-800 font-bold flex items-center space-x-1 transition">
+            <i data-lucide="truck" class="w-4 h-4 text-brand-gold"></i>
+            <span>Track Order</span>
+          </button>
           <a href="#contact-footer" class="hover:text-brand-600 transition">Contact</a>
         </nav>
 
         <!-- ডান পাশে: Add to Cart এবং তার ডানে Menu Option -->
         <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+          <!-- Desktop Tracking Quick Button -->
+          <button onclick="toggleTrackingModal(true)" class="hidden lg:flex items-center space-x-1.5 bg-brand-50 hover:bg-brand-100 text-brand-900 border border-brand-200 px-3 py-2 rounded-xl text-xs font-bold transition shadow-xs">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-700"></i>
+            <span>অর্ডার ট্র্যাকিং</span>
+          </button>
+
           <button onclick="checkAdminStatusAndOpen()" class="hidden md:flex items-center space-x-1.5 bg-brand-900 text-brand-gold hover:bg-brand-800 border border-brand-gold/30 px-3 py-2 rounded-xl text-xs font-bold transition shadow-xs">
             <i data-lucide="shield" class="w-4 h-4"></i>
             <span>Admin</span>
@@ -141,7 +151,7 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer Menu -->
+    <!-- Mobile Drawer Menu (Tracking অপশন যুক্ত) -->
     <div id="mobile-nav-menu" class="hidden md:hidden bg-white/98 backdrop-blur-md border-b border-gray-200 px-5 py-4 space-y-2 shadow-lg animate-in slide-in-from-top-2 duration-200">
       <a href="#hero-section" onclick="toggleMobileMenu()" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">
         <span>Home</span>
@@ -155,6 +165,16 @@
         <span>Shop Inventory</span>
         <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
       </a>
+      
+      <!-- Mobile Tracking বাটন -->
+      <button onclick="toggleMobileMenu(); toggleTrackingModal(true);" class="w-full flex items-center justify-between py-2.5 text-sm font-bold text-brand-800 border-b border-gray-100">
+        <span class="flex items-center space-x-2">
+          <i data-lucide="truck" class="w-4 h-4 text-brand-gold"></i>
+          <span>Track Order (অর্ডার ট্র্যাকিং)</span>
+        </span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </button>
+
       <a href="#why-choose-us" onclick="toggleMobileMenu()" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">
         <span>Why Choose Us</span>
         <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
@@ -443,6 +463,7 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2.5">নেভিগেশন</h4>
           <ul class="space-y-1.5 text-xs text-emerald-100/80">
             <li><a href="#hero-section" class="hover:text-white transition">হোমপেইজ</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleTrackingModal(true)" class="hover:text-white transition font-semibold text-brand-gold">অর্ডার ট্র্যাকিং (Tracking)</a></li>
             <li><a href="#scouting-progress" class="hover:text-white transition">স্কাউটিং প্রগ্রেস</a></li>
             <li><a href="#products-section" class="hover:text-white transition">সকল পণ্য</a></li>
             <li><a href="#why-choose-us" class="hover:text-white transition">আমাদের সম্পর্কে</a></li>
@@ -484,6 +505,47 @@
       <i data-lucide="message-circle" class="w-5 h-5"></i>
       <span class="text-xs tracking-wide hidden sm:inline">Help Desk</span>
     </button>
+  </div>
+
+  <!-- Order Tracking Modal (নতুন যুক্ত করা ট্র্যাকিং উইন্ডো) -->
+  <div id="tracking-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in zoom-in duration-150 flex flex-col">
+      <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="truck" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-gold"></i>
+          <h3 class="text-xs sm:text-sm font-bold">Track Your Order (অর্ডার ট্র্যাকিং)</h3>
+        </div>
+        <button onclick="toggleTrackingModal(false)" class="text-gray-300 hover:text-white p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-4 sm:p-5 space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">আপনার Order ID প্রদান করুন *</label>
+          <div class="flex items-center space-x-2">
+            <div class="relative flex-1">
+              <i data-lucide="hash" class="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+              <input type="text" id="track-order-input" placeholder="যেমন: TP-123456" class="w-full pl-8 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-bold uppercase focus:ring-2 focus:ring-brand-600 focus:outline-none">
+            </div>
+            <button onclick="handleTrackOrder()" class="px-4 py-2 bg-brand-800 hover:bg-brand-900 text-white text-xs font-bold rounded-xl transition flex items-center space-x-1 shrink-0 active:scale-95 shadow-xs">
+              <i data-lucide="search" class="w-3.5 h-3.5"></i>
+              <span>খুঁজুন</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ট্র্যাকিং রেজাল্ট কন্টেইনার -->
+        <div id="tracking-result-box" class="hidden border border-gray-200 rounded-xl p-3.5 bg-gray-50/70 space-y-3">
+          <!-- Rendered via JS -->
+        </div>
+
+        <div id="tracking-not-found" class="hidden text-center py-5 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 text-xs font-medium">
+          <i data-lucide="alert-circle" class="w-6 h-6 mx-auto mb-1 text-rose-500"></i>
+          কোনো তথ্য খুঁজে পাওয়া যায়নি! সঠিক Order ID প্রদান করেছেন কিনা পরীক্ষা করুন।
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Dual Action Order Modal -->
@@ -567,7 +629,7 @@
         <span>সাবটোটাল:</span>
         <span id="cart-subtotal-display" class="text-brand-900 text-sm sm:text-base font-black">৳0</span>
       </div>
-      <p class="text-[10px] text-gray-500 mb-3">অর্ডার কনফার্ম করার পর তা ব্যাকএন্ডে সংরক্ষিত হবে।</p>
+      <p class="text-[10px] text-gray-500 mb-3">পেমেন্ট সম্পন্ন করে অর্ডারটি চূড়ান্ত করতে পারবেন।</p>
       
       <button onclick="openCheckoutModal()" class="w-full py-2.5 sm:py-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white text-xs font-bold flex items-center justify-center space-x-1.5 shadow-md transition active:scale-95">
         <span>অর্ডার সম্পন্ন করুন (Checkout)</span>
@@ -576,20 +638,20 @@
     </div>
   </aside>
 
-  <!-- Checkout Information Modal -->
+  <!-- Checkout Information Modal (Step 1: গ্রাহকের তথ্য) -->
   <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
     <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in duration-150 max-h-[92vh] flex flex-col">
       <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
         <div class="flex items-center space-x-2">
           <i data-lucide="clipboard-check" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-gold"></i>
-          <h3 class="text-xs sm:text-sm font-bold">ডেলিভারি তথ্য দিন ও কনফার্ম করুন</h3>
+          <h3 class="text-xs sm:text-sm font-bold">ডেলিভারি তথ্য দিন (ধাপ ১/২)</h3>
         </div>
         <button onclick="closeCheckoutModal()" class="text-gray-300 hover:text-white p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <form id="checkout-form" onsubmit="handleOrderSubmission(event)" class="p-4 sm:p-5 space-y-3 overflow-y-auto custom-scrollbar">
+      <form id="checkout-form" onsubmit="handleProceedToPayment(event)" class="p-4 sm:p-5 space-y-3 overflow-y-auto custom-scrollbar">
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">আপনার নাম (Full Name) *</label>
           <input type="text" id="cust-name" required placeholder="আপনার নাম লিখুন" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
@@ -616,15 +678,119 @@
           <input type="text" id="cust-notes" placeholder="নির্দিষ্ট সাইজ বা ব্যাজ নাম" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
         </div>
 
-        <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl text-[11px] text-emerald-800 flex items-start space-x-2">
-          <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>
-          <span>আপনার অর্ডারটি সাথে সাথে সিস্টেম ব্যাকএন্ডে সংরক্ষিত হবে এবং আমরা যোগাযোগ করব।</span>
-        </div>
-
         <div class="pt-1.5">
           <button type="submit" class="w-full py-2.5 sm:py-3 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-md transition active:scale-95">
-            <i data-lucide="check" class="w-4 h-4 text-brand-gold"></i>
-            <span>অর্ডার সাবমিট করুন (Place Order)</span>
+            <span>পেমেন্ট করুন (Make Payment)</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-brand-gold"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Payment Modal (Step 2: বিকাশ ও নগদ পেমেন্ট গেটওয়ে) -->
+  <div id="payment-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in zoom-in duration-150 max-h-[92vh] flex flex-col">
+      <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="credit-card" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-gold"></i>
+          <h3 class="text-xs sm:text-sm font-bold">Make Payment — পেমেন্ট ভেরিফিকেশন</h3>
+        </div>
+        <button onclick="closePaymentModal()" class="text-gray-300 hover:text-white p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="payment-form" onsubmit="handleFinalOrderSubmission(event)" class="p-4 sm:p-5 space-y-4 overflow-y-auto custom-scrollbar">
+        
+        <!-- মোট কত টাকা দিতে হবে তার হাইলাইট বক্স -->
+        <div class="bg-gradient-to-r from-emerald-50 via-brand-50 to-emerald-100 border-2 border-brand-500/40 rounded-2xl p-4 text-center shadow-xs">
+          <p class="text-[11px] font-bold text-brand-800 uppercase tracking-wider mb-0.5">আপনাকে সর্বমোট পরিশোধ করতে হবে</p>
+          <div class="text-2xl sm:text-3xl font-black text-brand-900 flex items-center justify-center space-x-1">
+            <span id="payment-total-amount">৳0</span>
+          </div>
+          <span class="inline-block mt-1 bg-white/80 border border-brand-200 text-brand-900 text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
+            সঠিক পরিমাণ সেন্ড মানি করুন
+          </span>
+        </div>
+
+        <!-- একাউন্ট নাম্বার সমূহ (বিকাশ ও নগদ) -->
+        <div class="space-y-2.5">
+          <p class="text-xs font-bold text-gray-700 flex items-center space-x-1">
+            <i data-lucide="smartphone" class="w-3.5 h-3.5 text-brand-700"></i>
+            <span>নিচের যেকোনো নাম্বারে 'Send Money' করুন:</span>
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- বিকাশ একাউন্ট -->
+            <div class="p-3 bg-pink-50/70 border border-pink-200 rounded-xl relative group">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold text-pink-700">bKash (বিকাশ)</span>
+                <span class="text-[9px] bg-pink-100 text-pink-800 font-bold px-1.5 py-0.5 rounded">Personal</span>
+              </div>
+              <p class="text-sm font-black text-gray-800 tracking-wide font-mono" id="bkash-number-val">01595306172</p>
+              <button type="button" onclick="copyNumber('01595306172', 'বিকাশ নম্বর কপি করা হয়েছে!')" class="mt-1.5 w-full py-1 bg-white hover:bg-pink-100 text-pink-700 border border-pink-300 rounded-lg text-[10px] font-bold transition flex items-center justify-center space-x-1 active:scale-95">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span>কপি নম্বর</span>
+              </button>
+            </div>
+
+            <!-- নগদ একাউন্ট -->
+            <div class="p-3 bg-amber-50/70 border border-amber-200 rounded-xl relative group">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold text-amber-700">Nagad (নগদ)</span>
+                <span class="text-[9px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Personal</span>
+              </div>
+              <p class="text-sm font-black text-gray-800 tracking-wide font-mono" id="nagad-number-val">01595306172</p>
+              <button type="button" onclick="copyNumber('01595306172', 'নগদ নম্বর কপি করা হয়েছে!')" class="mt-1.5 w-full py-1 bg-white hover:bg-amber-100 text-amber-800 border border-amber-300 rounded-lg text-[10px] font-bold transition flex items-center justify-center space-x-1 active:scale-95">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span>কপি নম্বর</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- পেমেন্ট মেথড সিলেক্টর -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">আপনি যার মাধ্যমে টাকা পাঠিয়েছেন *</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center justify-center space-x-2 border rounded-xl p-2 cursor-pointer has-[:checked]:border-brand-700 has-[:checked]:bg-brand-50 transition text-xs font-bold text-gray-700">
+              <input type="radio" name="payment_method" value="bKash" checked class="text-brand-800 focus:ring-0">
+              <span>bKash (বিকাশ)</span>
+            </label>
+            <label class="flex items-center justify-center space-x-2 border rounded-xl p-2 cursor-pointer has-[:checked]:border-brand-700 has-[:checked]:bg-brand-50 transition text-xs font-bold text-gray-700">
+              <input type="radio" name="payment_method" value="Nagad" class="text-brand-800 focus:ring-0">
+              <span>Nagad (নগদ)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- যে নাম্বার থেকে টাকা পাঠানো হয়েছে -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">যে নাম্বার থেকে টাকা পাঠিয়েছেন (Sender Mobile Number) *</label>
+          <div class="relative">
+            <i data-lucide="phone-call" class="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input type="tel" id="pay-sender-number" required pattern="01[3-9][0-9]{8}" placeholder="01XXXXXXXXX" class="w-full pl-8 pr-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+        </div>
+
+        <!-- Transaction ID -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Transaction ID (TrxID) *</label>
+          <div class="relative">
+            <i data-lucide="hash" class="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="pay-trxid" required placeholder="যেমন: BL728A9KD" class="w-full pl-8 pr-3 py-2 border border-gray-200 rounded-xl text-xs font-mono uppercase focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+          <span class="text-[10px] text-gray-400 mt-0.5 block">টাকা পাঠানোর পর প্রাপ্ত কনফার্মেশন এসএমএস থেকে TrxID দিন।</span>
+        </div>
+
+        <div class="pt-1 flex items-center space-x-2">
+          <button type="button" onclick="backToCheckoutModal()" class="w-1/3 py-2.5 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold text-xs transition">
+            পেছনে
+          </button>
+          <button type="submit" class="w-2/3 py-2.5 sm:py-3 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-md transition active:scale-95">
+            <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold"></i>
+            <span>অর্ডার সাবমিট করুন (Submit Order)</span>
           </button>
         </div>
       </form>
@@ -638,8 +804,9 @@
         <i data-lucide="check-check" class="w-7 h-7 sm:w-8 sm:h-8"></i>
       </div>
       <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-1">অর্ডার সফলভাবে সেভ হয়েছে!</h3>
-      <p class="text-xs text-gray-600 mb-2">অর্ডার আইডি: <span id="success-order-id" class="font-bold text-brand-800"></span></p>
-      <p class="text-[11px] text-gray-500 mb-4">তথ্যটি ওয়েবসাইটের ব্যাকএন্ডে সেভ করা হয়েছে।</p>
+      <p class="text-xs text-gray-600 mb-1">অর্ডার আইডি: <span id="success-order-id" class="font-bold text-brand-800"></span></p>
+      <p class="text-xs text-brand-700 font-semibold mb-2">TrxID: <span id="success-order-trx" class="font-mono"></span></p>
+      <p class="text-[11px] text-gray-500 mb-4">পেমেন্ট ও অর্ডারের তথ্যটি ওয়েবসাইটের ব্যাকএন্ডে সেভ করা হয়েছে।</p>
       <div class="space-y-2">
         <button id="success-wa-btn" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center space-x-1.5 shadow-xs">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
@@ -693,7 +860,7 @@
             <i data-lucide="shield" class="w-4 h-4 sm:w-5 sm:h-5"></i>
           </div>
           <div>
-            <h3 class="text-xs sm:text-base font-black tracking-wide">TP ROVERMART — ADMIN</h3>
+            <h3 class="text-xs sm:base font-black tracking-wide">TP ROVERMART — ADMIN</h3>
             <p class="text-[9px] sm:text-[10px] text-emerald-300">User: <span class="font-bold">dev-TP</span></p>
           </div>
         </div>
@@ -800,7 +967,7 @@
     </div>
   </div>
 
-  <!-- Product Add / Edit Modal (সরাসরি ফাইল আপলোড ও প্রিভিউ সমৃদ্ধ) -->
+  <!-- Product Add / Edit Modal -->
   <div id="admin-product-edit-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
     <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-200 max-h-[92vh] flex flex-col">
       <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
@@ -850,7 +1017,6 @@
           </div>
         </div>
 
-        <!-- সরাসরি ফাইল আপলোড (ছবি বা ক্যামেরা থেকে)[span_1](start_span)[span_1](end_span) -->
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">প্রোডাক্টের ছবি আপলোড করুন *</label>
           <div class="mt-1 flex items-center gap-3">
@@ -863,7 +1029,6 @@
               <input type="file" id="edit-prod-file" accept="image/*" class="hidden" onchange="handleProductImageUpload(event)">
             </label>
             
-            <!-- ছবি প্রিভিউ বক্স -->
             <div id="image-preview-wrapper" class="relative w-14 h-14 rounded-xl border border-gray-200 overflow-hidden bg-gray-50 shrink-0 hidden">
               <img id="image-preview" src="" alt="Preview" class="w-full h-full object-cover">
               <button type="button" onclick="removeUploadedImage()" class="absolute top-0.5 right-0.5 bg-black/70 hover:bg-red-600 text-white rounded-full p-0.5 transition">
@@ -871,7 +1036,6 @@
               </button>
             </div>
           </div>
-          <!-- হিডেন ইনপুটে Base64 ডেটা সংরক্ষিত থাকবে -->
           <input type="hidden" id="edit-prod-image-base64">
         </div>
 
@@ -906,7 +1070,9 @@
     const SHOP_CONFIG = {
       name: "TP RoverMart",
       whatsappNumber: "8801595306172",
-      currencySymbol: "৳"
+      currencySymbol: "৳",
+      bkashNumber: "01595306172",
+      nagadNumber: "01595306172"
     };
 
     const ADMIN_CREDENTIALS = {
@@ -1060,6 +1226,8 @@
     let activeModalProduct = null;
     let selectedModalVariant = "";
     let modalQuantity = 1;
+
+    let pendingCustomerData = null;
 
     function getCategoryLabel(catKey) {
       const map = {
@@ -1424,13 +1592,14 @@
       }
       toggleCartDrawer(false);
       document.getElementById("checkout-modal").classList.remove("hidden");
+      lucide.createIcons();
     }
 
     function closeCheckoutModal() {
       document.getElementById("checkout-modal").classList.add("hidden");
     }
 
-    function handleOrderSubmission(e) {
+    function handleProceedToPayment(e) {
       e.preventDefault();
 
       if (cart.length === 0) {
@@ -1443,6 +1612,47 @@
       const city = document.getElementById("cust-city").value.trim();
       const address = document.getElementById("cust-address").value.trim();
       const notes = document.getElementById("cust-notes").value.trim();
+
+      pendingCustomerData = { name, phone, city, address, notes };
+
+      const calculatedSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      document.getElementById("payment-total-amount").textContent = `${SHOP_CONFIG.currencySymbol}${calculatedSubtotal}`;
+      
+      closeCheckoutModal();
+      document.getElementById("payment-modal").classList.remove("hidden");
+      lucide.createIcons();
+    }
+
+    function backToCheckoutModal() {
+      document.getElementById("payment-modal").classList.add("hidden");
+      document.getElementById("checkout-modal").classList.remove("hidden");
+    }
+
+    function closePaymentModal() {
+      document.getElementById("payment-modal").classList.add("hidden");
+    }
+
+    function copyNumber(num, text) {
+      navigator.clipboard.writeText(num).then(() => {
+        showToast(text || "নম্বর কপি হয়েছে!");
+      }).catch(() => {
+        showToast(`নম্বর: ${num}`);
+      });
+    }
+
+    function handleFinalOrderSubmission(e) {
+      e.preventDefault();
+
+      if (!pendingCustomerData || cart.length === 0) {
+        alert("অর্ডার প্রক্রিয়া পুনরায় শুরু করুন।");
+        return;
+      }
+
+      const senderNumber = document.getElementById("pay-sender-number").value.trim();
+      const trxId = document.getElementById("pay-trxid").value.trim().toUpperCase();
+      const methodRadio = document.querySelector('input[name="payment_method"]:checked');
+      const paymentMethod = methodRadio ? methodRadio.value : "bKash";
 
       const orderRef = "TP-" + Math.floor(100000 + Math.random() * 900000);
       let calculatedSubtotal = 0;
@@ -1462,7 +1672,13 @@
 
       const newOrder = {
         orderId: orderRef,
-        customer: { name, phone, city, address, notes },
+        customer: pendingCustomerData,
+        payment: {
+          method: paymentMethod,
+          senderNumber: senderNumber,
+          trxId: trxId,
+          amount: calculatedSubtotal
+        },
         items: orderItems,
         totalAmount: calculatedSubtotal,
         status: "Pending",
@@ -1474,7 +1690,7 @@
 
       cart = [];
       saveCart();
-      closeCheckoutModal();
+      closePaymentModal();
 
       let itemsText = "";
       newOrder.items.forEach((item, i) => {
@@ -1484,27 +1700,114 @@
       const waMsg = `*TP ROVERMART — NEW ORDER CONFIRMATION*\n` +
         `------------------------------------\n` +
         `*Order ID:* ${orderRef}\n` +
-        `*Customer Name:* ${name}\n` +
-        `*Mobile:* ${phone}\n` +
-        `*Address:* ${address}, ${city}\n` +
-        (notes ? `*Note:* ${notes}\n` : '') +
+        `*Customer Name:* ${newOrder.customer.name}\n` +
+        `*Mobile:* ${newOrder.customer.phone}\n` +
+        `*Address:* ${newOrder.customer.address}, ${newOrder.customer.city}\n` +
+        (newOrder.customer.notes ? `*Note:* ${newOrder.customer.notes}\n` : '') +
         `------------------------------------\n` +
-        `*Items:*\n${itemsText}` +
+        `*PAYMENT DETAILS:*\n` +
+        `*Method:* ${paymentMethod}\n` +
+        `*Sender Mobile:* ${senderNumber}\n` +
+        `*Transaction ID:* ${trxId}\n` +
+        `*Paid Amount:* ৳${calculatedSubtotal}\n` +
+        `------------------------------------\n` +
+        `*Items Ordered:*\n${itemsText}` +
         `*Total Subtotal:* ৳${calculatedSubtotal}\n` +
         `------------------------------------\n` +
-        `অর্ডারটি সিস্টেম ব্যাকএন্ডে সেভ হয়েছে। ধন্যবাদ!`;
+        `পেমেন্ট ও অর্ডারটি সিস্টেম ব্যাকএন্ডে সংরক্ষিত হয়েছে।`;
 
       const whatsappUrl = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
 
       document.getElementById("success-order-id").textContent = orderRef;
+      document.getElementById("success-order-trx").textContent = trxId;
       document.getElementById("success-wa-btn").onclick = () => window.open(whatsappUrl, "_blank");
       document.getElementById("order-success-modal").classList.remove("hidden");
 
       document.getElementById("checkout-form").reset();
+      document.getElementById("payment-form").reset();
+      pendingCustomerData = null;
     }
 
     function closeOrderSuccessModal() {
       document.getElementById("order-success-modal").classList.add("hidden");
+    }
+
+    // --- Order Tracking Logic ---
+    function toggleTrackingModal(open) {
+      const modal = document.getElementById("tracking-modal");
+      const resultBox = document.getElementById("tracking-result-box");
+      const notFoundBox = document.getElementById("tracking-not-found");
+      
+      if (open) {
+        document.getElementById("track-order-input").value = "";
+        resultBox.classList.add("hidden");
+        notFoundBox.classList.add("hidden");
+        modal.classList.remove("hidden");
+        lucide.createIcons();
+      } else {
+        modal.classList.add("hidden");
+      }
+    }
+
+    function handleTrackOrder() {
+      const input = document.getElementById("track-order-input").value.trim().toUpperCase();
+      const resultBox = document.getElementById("tracking-result-box");
+      const notFoundBox = document.getElementById("tracking-not-found");
+
+      if (!input) {
+        showToast("অনুগ্রহ করে একটি Order ID দিন!");
+        return;
+      }
+
+      const order = ORDERS.find(o => o.orderId.toUpperCase() === input);
+
+      if (order) {
+        notFoundBox.classList.add("hidden");
+        resultBox.classList.remove("hidden");
+
+        const statusBadgeClass = 
+          order.status === 'Completed' ? 'bg-emerald-100 text-emerald-800 border-emerald-300' :
+          order.status === 'Payment Verified' ? 'bg-green-100 text-green-800 border-green-300' :
+          order.status === 'Payment Not Verified' ? 'bg-rose-100 text-rose-800 border-rose-300' :
+          order.status === 'Processing' ? 'bg-blue-100 text-blue-800 border-blue-300' :
+          order.status === 'Cancelled' ? 'bg-red-100 text-red-800 border-red-300' :
+          'bg-amber-100 text-amber-800 border-amber-300';
+
+        resultBox.innerHTML = `
+          <div class="flex items-center justify-between pb-2 border-b border-gray-200">
+            <div>
+              <span class="text-[10px] text-gray-500 font-semibold">অর্ডার আইডি</span>
+              <h4 class="text-sm font-black text-brand-900">${order.orderId}</h4>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold border ${statusBadgeClass}">
+              ${order.status}
+            </span>
+          </div>
+
+          <div class="text-xs space-y-1">
+            <p><span class="font-semibold text-gray-700">গ্রাহক:</span> ${order.customer.name}</p>
+            <p><span class="font-semibold text-gray-700">তারিখ:</span> ${order.createdAt}</p>
+            <p><span class="font-semibold text-gray-700">পেমেন্ট:</span> ${order.payment ? order.payment.method : 'bKash'} (TrxID: <span class="font-mono font-bold">${order.payment ? order.payment.trxId : 'N/A'}</span>)</p>
+            <p><span class="font-semibold text-gray-700">মোট বিল:</span> <span class="font-bold text-brand-900">৳${order.totalAmount}</span></p>
+          </div>
+
+          <div class="pt-2 border-t border-gray-200">
+            <span class="text-[10px] font-bold uppercase text-gray-500 block mb-1">পণ্য তালিকা:</span>
+            <ul class="text-[11px] text-gray-600 space-y-0.5">
+              ${order.items.map(item => `
+                <li class="flex justify-between">
+                  <span>• ${item.name} (${item.variant}) x${item.quantity}</span>
+                  <span class="font-bold text-gray-800">৳${item.subtotal}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        `;
+      } else {
+        resultBox.classList.add("hidden");
+        notFoundBox.classList.remove("hidden");
+      }
+      lucide.createIcons();
     }
 
     function handleGeneralInquiry() {
@@ -1631,6 +1934,7 @@
             <tr>
               <th class="p-2">অর্ডার আইডি</th>
               <th class="p-2">গ্রাহক</th>
+              <th class="p-2">পেমেন্ট (TrxID)</th>
               <th class="p-2">মূল্য</th>
               <th class="p-2">স্ট্যাটাস</th>
             </tr>
@@ -1640,9 +1944,13 @@
               <tr>
                 <td class="p-2 font-bold text-brand-900">${o.orderId}</td>
                 <td class="p-2">${o.customer.name}</td>
+                <td class="p-2">
+                  <span class="font-bold text-[10px] text-brand-800">${o.payment ? o.payment.method : 'bKash'}</span>: 
+                  <span class="font-mono text-[10px]">${o.payment ? o.payment.trxId : 'N/A'}</span>
+                </td>
                 <td class="p-2 font-bold">${SHOP_CONFIG.currencySymbol}${o.totalAmount}</td>
                 <td class="p-2">
-                  <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${                     o.status === 'Completed' ? 'bg-emerald-100 text-emerald-800' :                     o.status === 'Processing' ? 'bg-blue-100 text-blue-800' :                     o.status === 'Cancelled' ? 'bg-red-100 text-red-800' :                     'bg-amber-100 text-amber-800'                   }">${o.status}</span>
+                  <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${                     o.status === 'Completed' ? 'bg-emerald-100 text-emerald-800' :                     o.status === 'Payment Verified' ? 'bg-green-100 text-green-800' :                     o.status === 'Payment Not Verified' ? 'bg-rose-100 text-rose-800' :                     o.status === 'Processing' ? 'bg-blue-100 text-blue-800' :                     o.status === 'Cancelled' ? 'bg-red-100 text-red-800' :                     'bg-amber-100 text-amber-800'                   }">${o.status}</span>
                 </td>
               </tr>
             `).join('')}
@@ -1679,6 +1987,8 @@
             <div class="flex items-center space-x-2">
               <select onchange="updateOrderStatus(${idx}, this.value)" class="text-xs font-semibold px-2 py-1 border rounded-lg bg-gray-50 focus:outline-none">
                 <option value="Pending" ${order.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                <option value="Payment Verified" ${order.status === 'Payment Verified' ? 'selected' : ''}>Payment Verified</option>
+                <option value="Payment Not Verified" ${order.status === 'Payment Not Verified' ? 'selected' : ''}>Payment Not Verified</option>
                 <option value="Processing" ${order.status === 'Processing' ? 'selected' : ''}>Processing</option>
                 <option value="Completed" ${order.status === 'Completed' ? 'selected' : ''}>Completed</option>
                 <option value="Cancelled" ${order.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
@@ -1686,6 +1996,23 @@
               <button onclick="deleteSingleOrder(${idx})" class="p-1 text-gray-400 hover:text-red-600 rounded-lg hover:bg-gray-100 transition">
                 <i data-lucide="trash-2" class="w-4 h-4"></i>
               </button>
+            </div>
+          </div>
+
+          <!-- পেমেন্ট ইনফো সেকশন -->
+          <div class="my-2.5 p-2.5 bg-emerald-50/70 border border-emerald-200 rounded-xl flex flex-wrap items-center justify-between text-xs gap-2">
+            <div>
+              <span class="font-bold text-brand-900">পেমেন্ট মেথড:</span> ${order.payment ? order.payment.method : 'bKash'} | 
+              <span class="font-bold text-brand-900">প্রেরক নম্বর:</span> ${order.payment ? order.payment.senderNumber : order.customer.phone}
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="font-bold text-emerald-800">TrxID:</span> 
+              <span class="font-mono bg-white px-2 py-0.5 rounded border border-emerald-300 font-bold">${order.payment ? order.payment.trxId : 'N/A'}</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
+                order.status === 'Payment Verified' ? 'bg-green-100 text-green-800 border border-green-300' :
+                order.status === 'Payment Not Verified' ? 'bg-rose-100 text-rose-800 border border-rose-300' :
+                'bg-gray-100 text-gray-600'
+              }">${order.status === 'Payment Verified' ? '✓ Verified' : order.status === 'Payment Not Verified' ? '✕ Not Verified' : 'Status: ' + order.status}</span>
             </div>
           </div>
 
@@ -1711,7 +2038,7 @@
             </div>
             <div class="flex items-center space-x-2.5 w-full sm:w-auto justify-between sm:justify-end">
               <span class="text-xs text-gray-500">মোট: <span class="font-black text-brand-900">৳${order.totalAmount}</span></span>
-              <a href="https://wa.me/88${order.customer.phone}?text=${encodeURIComponent(`আসসালামু আলাইকুম ${order.customer.name}! TP RoverMart থেকে আপনার অর্ডার #${order.orderId} প্রসঙ্গে যোগাযোগ করছি।`)}" target="_blank" class="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-[10px] sm:text-[11px] flex items-center space-x-1">
+              <a href="https://wa.me/88${order.customer.phone}?text=${encodeURIComponent(`আসসালামু আলাইকুম ${order.customer.name}! TP RoverMart থেকে আপনার অর্ডার #${order.orderId} (TrxID: ${order.payment ? order.payment.trxId : ''}, Status: ${order.status}) প্রসঙ্গে যোগাযোগ করছি।`)}" target="_blank" class="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-[10px] sm:text-[11px] flex items-center space-x-1">
                 <i data-lucide="message-circle" class="w-3 h-3"></i>
                 <span>WhatsApp</span>
               </a>
@@ -1794,7 +2121,6 @@
       lucide.createIcons();
     }
 
-    // সরাসরি ইমেজ ফাইল প্রসেসিং এবং অপ্টিমাইজেশন (Base64)
     function handleProductImageUpload(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -1809,9 +2135,8 @@
         const img = new Image();
         img.src = e.target.result;
         img.onload = function() {
-          // ক্লায়েন্ট-সাইড অপ্টিমাইজেশন (লোকালস্টোরেজের লিমিট সুরক্ষিত রাখতে রিসাইজ)
           const canvas = document.createElement("canvas");
-          const maxDim = 800; // সর্বোচ্চ 800px মাপ
+          const maxDim = 800;
           let width = img.width;
           let height = img.height;
 
@@ -1828,10 +2153,8 @@
           const ctx = canvas.getContext("2d");
           ctx.drawImage(img, 0, 0, width, height);
 
-          // কম্প্রেসড ইমেজ ডেটা
           const compressedDataUrl = canvas.toDataURL("image/jpeg", 0.82);
 
-          // প্রিভিউ এবং ইনপুটে মান সেট করা
           document.getElementById("edit-prod-image-base64").value = compressedDataUrl;
           document.getElementById("image-preview").src = compressedDataUrl;
           document.getElementById("image-preview-wrapper").classList.remove("hidden");
@@ -1868,7 +2191,6 @@
         document.getElementById("edit-prod-price").value = prod.price;
         document.getElementById("edit-prod-oldprice").value = prod.oldPrice || "";
         
-        // বিদ্যমান ছবি প্রিভিউতে লোড
         if (prod.image) {
           document.getElementById("edit-prod-image-base64").value = prod.image;
           document.getElementById("image-preview").src = prod.image;
@@ -1902,7 +2224,6 @@
       const oldPriceVal = document.getElementById("edit-prod-oldprice").value;
       const oldPrice = oldPriceVal ? parseFloat(oldPriceVal) : null;
       
-      // ফাইল থেকে পাওয়া Base64 ইমেজ
       const image = document.getElementById("edit-prod-image-base64").value.trim();
       if (!image) {
         alert("অনুগ্রহ করে প্রোডাক্টের জন্য একটি ছবি আপলোড করুন!");
