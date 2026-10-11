@@ -2,7 +2,7 @@
 <html lang="bn" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TP RoverMart | Scout Shop - Gear Up. Explore More. Serve Better.</title>
   <meta name="description" content="TP RoverMart - Official Scout & Rover Scout gear, uniforms, neckerchiefs, woggles, badges, and camping essentials. Direct ordering with admin backend.">
   <link rel="icon" type="image/jpeg" href="1000121648-01.jpeg">
@@ -48,6 +48,7 @@
       background-color: #f8faf8;
       color: #1a2e22;
       font-family: 'Outfit', 'Hind Siliguri', sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
     .hero-bg {
       background: linear-gradient(135deg, #122c1d 0%, #1b472c 55%, #225936 100%);
@@ -60,8 +61,8 @@
       scrollbar-width: none;
     }
     .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
     }
     .custom-scrollbar::-webkit-scrollbar-track {
       background: #f1f5f2;
@@ -75,11 +76,11 @@
 <body class="flex flex-col min-h-screen">
 
   <!-- Announcement Bar -->
-  <aside aria-label="বিজ্ঞপ্তি" class="bg-brand-900 text-brand-100 text-xs py-2 px-4 border-b border-brand-800">
+  <aside aria-label="বিজ্ঞপ্তি" class="bg-brand-900 text-brand-100 text-[11px] sm:text-xs py-1.5 px-3 sm:px-4 border-b border-brand-800">
     <div class="max-w-7xl mx-auto flex justify-between items-center text-center">
-      <div class="flex items-center space-x-2 mx-auto sm:mx-0">
-        <span class="inline-block w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-        <span class="tracking-wide">স্বাগতম TP RoverMart-এ — স্কাউট, রোভার ও আউটডোর অ্যাডভেঞ্চারের বিশ্বস্ত শপ</span>
+      <div class="flex items-center space-x-1.5 mx-auto sm:mx-0 truncate">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse shrink-0"></span>
+        <span class="tracking-tight sm:tracking-wide truncate">TP RoverMart — স্কাউট, রোভার ও আউটডোর অ্যাডভেঞ্চারের শপ</span>
       </div>
       <div class="hidden sm:flex items-center space-x-6 text-[11px] text-gray-300">
         <span><i data-lucide="check-circle" class="w-3.5 h-3.5 inline text-brand-gold mr-1"></i> কোয়ালিটি পণ্য</span>
@@ -92,21 +93,21 @@
   </aside>
 
   <!-- Navigation Bar -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-emerald-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-xs border-b border-emerald-100">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
         
-        <!-- Logo & Brand Name -->
-        <a href="#hero-section" class="flex items-center space-x-3.5 group">
-          <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-brand-700 p-0.5 bg-emerald-50 shadow-sm flex items-center justify-center shrink-0">
+        <!-- বাম পাশে: Logo & Shop Name -->
+        <a href="#hero-section" class="flex items-center space-x-2.5 sm:space-x-3.5 group min-w-0 pr-2">
+          <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-brand-700 p-0.5 bg-emerald-50 shadow-xs flex items-center justify-center shrink-0">
             <img src="1000121648-01.jpeg" alt="TP RoverMart Logo" class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&auto=format&fit=crop&q=80'">
           </div>
-          <div>
+          <div class="min-w-0">
             <div class="flex items-center space-x-1.5">
-              <span class="text-xl sm:text-2xl font-black tracking-tight text-brand-900 group-hover:text-brand-700 transition">TP ROVERMART</span>
-              <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest bg-brand-100 text-brand-800 px-1.5 py-0.5 rounded">SCOUT SHOP</span>
+              <span class="text-base sm:text-2xl font-black tracking-tight text-brand-900 group-hover:text-brand-700 transition truncate">TP ROVERMART</span>
+              <span class="hidden xs:inline-block text-[9px] uppercase font-bold tracking-wider bg-brand-100 text-brand-800 px-1.5 py-0.5 rounded">SHOP</span>
             </div>
-            <p class="text-[10px] sm:text-[11px] font-medium text-emerald-800/80 -mt-0.5 tracking-wider">Gear Up. Explore More. Serve Better.</p>
+            <p class="text-[9px] sm:text-[11px] font-medium text-emerald-800/80 -mt-0.5 tracking-wider truncate">Gear Up. Explore More.</p>
           </div>
         </a>
 
@@ -119,63 +120,81 @@
           <a href="#contact-footer" class="hover:text-brand-600 transition">Contact</a>
         </nav>
 
-        <!-- Right Action Buttons -->
-        <div class="flex items-center space-x-3">
-          <button onclick="checkAdminStatusAndOpen()" class="flex items-center space-x-1.5 bg-brand-900 text-brand-gold hover:bg-brand-800 border border-brand-gold/30 px-3 py-2 rounded-xl text-xs font-bold transition shadow-xs">
+        <!-- ডান পাশে: Add to Cart এবং তার ডানে Menu Option -->
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+          <button onclick="checkAdminStatusAndOpen()" class="hidden md:flex items-center space-x-1.5 bg-brand-900 text-brand-gold hover:bg-brand-800 border border-brand-gold/30 px-3 py-2 rounded-xl text-xs font-bold transition shadow-xs">
             <i data-lucide="shield" class="w-4 h-4"></i>
-            <span class="hidden sm:inline">Admin</span>
+            <span>Admin</span>
           </button>
 
-          <!-- Cart Drawer Button -->
-          <button onclick="toggleCartDrawer(true)" class="relative p-2.5 rounded-xl bg-brand-50 text-brand-800 hover:bg-brand-100 transition focus:outline-none focus:ring-2 focus:ring-brand-500">
-            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-            <span id="header-cart-badge" class="absolute -top-1.5 -right-1.5 bg-brand-gold text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-md scale-0 transition-transform duration-200">0</span>
+          <!-- Add to Cart (Shopping Bag) -->
+          <button onclick="toggleCartDrawer(true)" aria-label="Shopping Cart" class="relative p-2 sm:p-2.5 rounded-xl bg-brand-50 text-brand-800 hover:bg-brand-100 transition active:scale-95 border border-brand-200/60">
+            <i data-lucide="shopping-bag" class="w-5 h-5 sm:w-5 sm:h-5"></i>
+            <span id="header-cart-badge" class="absolute -top-1.5 -right-1.5 bg-brand-gold text-white text-[10px] sm:text-[11px] font-black w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow-md scale-0 transition-transform duration-200">0</span>
           </button>
 
-          <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-gray-700 hover:bg-gray-100 rounded-xl">
-            <i data-lucide="menu" class="w-6 h-6"></i>
+          <!-- Mobile Menu Toggle Button -->
+          <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" class="md:hidden p-2 sm:p-2.5 text-gray-700 hover:bg-gray-100 rounded-xl border border-gray-200 transition active:scale-95">
+            <i data-lucide="menu" class="w-5 h-5"></i>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-nav-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-3">
-      <a href="#hero-section" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-gray-800 border-b border-gray-100">Home</a>
-      <a href="#scouting-progress" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-gray-800 border-b border-gray-100">Progress</a>
-      <a href="#products-section" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-gray-800 border-b border-gray-100">Shop Inventory</a>
-      <a href="#why-choose-us" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-gray-800 border-b border-gray-100">Why Us</a>
-      <a href="#contact-footer" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-gray-800 border-b border-gray-100">Contact</a>
-      <button onclick="toggleMobileMenu(); checkAdminStatusAndOpen();" class="w-full text-left py-2 text-base font-bold text-brand-700 flex items-center space-x-2">
-        <i data-lucide="shield" class="w-4 h-4"></i>
-        <span>Admin Panel Login</span>
-      </button>
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-nav-menu" class="hidden md:hidden bg-white/98 backdrop-blur-md border-b border-gray-200 px-5 py-4 space-y-2 shadow-lg animate-in slide-in-from-top-2 duration-200">
+      <a href="#hero-section" onclick="toggleMobileMenu()" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">
+        <span>Home</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#scouting-progress" onclick="toggleMobileMenu()" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">
+        <span>Scouting Progress</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#products-section" onclick="toggleMobileMenu()" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">
+        <span>Shop Inventory</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#why-choose-us" onclick="toggleMobileMenu()" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">
+        <span>Why Choose Us</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <a href="#contact-footer" onclick="toggleMobileMenu()" class="flex items-center justify-between py-2.5 text-sm font-semibold text-gray-800 border-b border-gray-100">
+        <span>Contact & Helpline</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+      </a>
+      <div class="pt-2">
+        <button onclick="toggleMobileMenu(); checkAdminStatusAndOpen();" class="w-full py-2.5 px-3 rounded-xl bg-brand-900 text-brand-gold text-xs font-bold flex items-center justify-center space-x-2 shadow-xs">
+          <i data-lucide="shield" class="w-4 h-4"></i>
+          <span>Admin Portal Login</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero-section" class="relative hero-bg text-white overflow-hidden py-14 sm:py-20">
-    <div class="relative max-w-4xl mx-auto px-4 text-center">
-      <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 text-xs text-brand-100 mb-5 font-medium">
+  <section id="hero-section" class="relative hero-bg text-white overflow-hidden py-10 sm:py-20 px-4">
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center space-x-1.5 bg-white/10 backdrop-blur-md px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-white/15 text-[11px] sm:text-xs text-brand-100 mb-4 font-medium">
         <i data-lucide="compass" class="w-3.5 h-3.5 text-brand-gold"></i>
-        <span>স্কাউট ও রোভারদের নির্ভরযোগ্য শপ</span>
+        <span>স্কাউট ও রোভারদের বিশ্বস্ত শপ</span>
       </div>
 
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-5">
-        Everything a Scout Needs, <br class="hidden sm:inline">
+      <h1 class="text-2xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight sm:leading-none mb-3 sm:mb-5">
+        Everything a Scout Needs, <br class="inline">
         <span class="text-brand-gold">All in One Place.</span>
       </h1>
 
-      <p class="text-sm sm:text-base text-emerald-100/90 max-w-2xl mx-auto mb-7 font-light">
-        অফিসিয়াল ইউনিফর্ম, ব্যাজ, স্কার্ফ, ক্যারাবিনার ও হাইকিং ইকুইপমেন্ট। ঝামেলাহীনভাবে অর্ডার করুন আমাদের অনলাইন পোর্টালে।
+      <p class="text-xs sm:text-base text-emerald-100/90 max-w-xl mx-auto mb-6 font-light leading-relaxed">
+        অফিসিয়াল ইউনিফর্ম, ব্যাজ, স্কার্ফ ও হাইকিং ইকুইপমেন্ট। ঝামেলাহীনভাবে অর্ডার করুন আমাদের অনলাইন পোর্টালে।
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="#products-section" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-brand-gold hover:bg-brand-goldhover text-brand-900 font-bold px-7 py-3 rounded-xl shadow-lg transition text-sm">
+      <div class="flex flex-col xs:flex-row items-stretch justify-center gap-2.5 sm:gap-3 max-w-sm sm:max-w-none mx-auto">
+        <a href="#products-section" class="inline-flex items-center justify-center space-x-2 bg-brand-gold hover:bg-brand-goldhover text-brand-900 font-bold px-6 py-2.5 sm:py-3 rounded-xl shadow-md transition text-xs sm:text-sm active:scale-95">
           <span>পণ্যসমূহ দেখুন</span>
           <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
-        <button onclick="handleGeneralInquiry()" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl border border-white/20 transition text-sm">
+        <button onclick="handleGeneralInquiry()" class="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-2.5 sm:py-3 rounded-xl border border-white/20 transition text-xs sm:text-sm active:scale-95">
           <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
           <span>সরাসরি হেল্পডেস্ক</span>
         </button>
@@ -184,46 +203,44 @@
   </section>
 
   <!-- Scouting Progression & Awards Section -->
-  <section id="scouting-progress" class="py-12 bg-gradient-to-b from-white via-emerald-50/40 to-white border-t border-emerald-100">
+  <section id="scouting-progress" class="py-10 sm:py-12 bg-gradient-to-b from-white via-emerald-50/40 to-white border-t border-emerald-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="inline-flex items-center space-x-2 bg-brand-100 text-brand-900 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+        <div class="inline-flex items-center space-x-1.5 bg-brand-100 text-brand-900 px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
           <i data-lucide="award" class="w-3.5 h-3.5 text-brand-gold"></i>
           <span>স্কাউটিং সরঞ্জাম</span>
         </div>
-        <h2 class="text-2xl sm:text-3xl font-black text-brand-900 tracking-tight">
-          কাব থেকে রোভার — প্রতিটি অর্জনে পাশে আছে <br> TP RoverMart
+        <h2 class="text-xl sm:text-3xl font-black text-brand-900 tracking-tight">
+          কাব থেকে রোভার — প্রতিটি অর্জনে পাশে আছে TP RoverMart
         </h2>
-        <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
-          শাপলা কাব অ্যাওয়ার্ড, প্রেসিডেন্ট'স স্কাউট কিংবা সর্বোচ্চ গৌরব প্রেসিডেন্ট'স রোভার স্কাউট — আপনার এই গৌরবান্বিত অগ্রযাত্রার প্রয়োজনীয় প্রতিটি অফিসিয়াল ব্যাজ, ইউনিফর্ম ও এক্সেসরিজ প্রস্তুত।
+        <p class="text-[11px] sm:text-xs text-gray-600 mt-2 leading-relaxed">
+          শাপলা কাব অ্যাওয়ার্ড, প্রেসিডেন্ট'স স্কাউট কিংবা প্রেসিডেন্ট'স রোভার স্কাউট — প্রয়োজনীয় প্রতিটি অফিসিয়াল ব্যাজ ও ইউনিফর্ম প্রস্তুত।
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-4">
         
         <!-- Cub Section -->
-        <div class="group relative bg-white rounded-2xl border-2 border-yellow-200 hover:border-yellow-400 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+        <div class="bg-white rounded-2xl border-2 border-yellow-200 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-[10px] uppercase font-black tracking-widest bg-yellow-100 text-yellow-800 px-2.5 py-1 rounded-md">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] uppercase font-black tracking-wider bg-yellow-100 text-yellow-800 px-2.5 py-0.5 rounded-md">
                 কাব শাখা (Cub Scouts)
               </span>
-              <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+              <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
             </div>
-            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-tr from-yellow-400 to-amber-300 rounded-2xl p-1 shadow-md flex items-center justify-center">
-              <div class="w-full h-full bg-yellow-50 rounded-xl flex items-center justify-center text-yellow-700">
-                <i data-lucide="sparkles" class="w-8 h-8"></i>
-              </div>
+            <div class="w-12 h-12 mx-auto mb-3 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-700">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-black text-gray-900 text-center">শাপলা কাব অ্যাওয়ার্ড</h3>
-            <p class="text-[11px] text-gray-500 text-center mt-1">Shapla Cub Award</p>
-            <p class="text-xs text-gray-600 text-center mt-3 leading-relaxed">
+            <h3 class="text-base font-black text-gray-900 text-center">শাপলা কাব অ্যাওয়ার্ড</h3>
+            <p class="text-[10px] text-gray-500 text-center">Shapla Cub Award</p>
+            <p class="text-xs text-gray-600 text-center mt-2 leading-relaxed">
               কাব স্কাউট শাখার সর্বোচ্চ সম্মাননা। দক্ষতা ও সমাজসেবার মাধ্যমে অর্জিত সোনালী শাপলা ব্যাজ।
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-yellow-100 text-center">
-            <button onclick="filterByCat('badges')" class="w-full py-2.5 px-4 rounded-xl bg-yellow-500 hover:bg-yellow-600 text-brand-900 font-bold text-xs transition shadow-xs flex items-center justify-center space-x-1.5">
+          <div class="mt-4 pt-3 border-t border-yellow-100">
+            <button onclick="filterByCat('badges')" class="w-full py-2 px-3 rounded-xl bg-yellow-500 hover:bg-yellow-600 text-brand-900 font-bold text-xs transition flex items-center justify-center space-x-1.5">
               <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
               <span>কাব ব্যাজ ও গিয়ার দেখুন</span>
             </button>
@@ -231,27 +248,25 @@
         </div>
 
         <!-- Scout Section -->
-        <div class="group relative bg-white rounded-2xl border-2 border-emerald-300 hover:border-emerald-500 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden ring-2 ring-emerald-600/10">
+        <div class="bg-white rounded-2xl border-2 border-emerald-300 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between ring-1 ring-emerald-500/20">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-[10px] uppercase font-black tracking-widest bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] uppercase font-black tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-md">
                 স্কাউট শাখা (Boy Scouts)
               </span>
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
             </div>
-            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-tr from-emerald-600 to-green-500 rounded-2xl p-1 shadow-md flex items-center justify-center">
-              <div class="w-full h-full bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-700">
-                <i data-lucide="shield" class="w-8 h-8"></i>
-              </div>
+            <div class="w-12 h-12 mx-auto mb-3 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700">
+              <i data-lucide="shield" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-black text-gray-900 text-center">প্রেসিডেন্ট'স স্কাউট (PS)</h3>
-            <p class="text-[11px] text-gray-500 text-center mt-1">President's Scout Award</p>
-            <p class="text-xs text-gray-600 text-center mt-3 leading-relaxed">
+            <h3 class="text-base font-black text-gray-900 text-center">প্রেসিডেন্ট'স স্কাউট (PS)</h3>
+            <p class="text-[10px] text-gray-500 text-center">President's Scout Award</p>
+            <p class="text-xs text-gray-600 text-center mt-2 leading-relaxed">
               স্কাউট শাখার সর্বোচ্চ গৌরবময় স্বীকৃতি। হাইকিং, ক্যাম্পিং ও পাইওনিয়ারিং নৈপুণ্যের প্রতীক।
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-emerald-100 text-center">
-            <button onclick="filterByCat('uniforms')" class="w-full py-2.5 px-4 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs transition shadow-xs flex items-center justify-center space-x-1.5">
+          <div class="mt-4 pt-3 border-t border-emerald-100">
+            <button onclick="filterByCat('uniforms')" class="w-full py-2 px-3 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs transition flex items-center justify-center space-x-1.5">
               <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-brand-gold"></i>
               <span>স্কাউট ইউনিফর্ম ও সরঞ্জাম</span>
             </button>
@@ -259,27 +274,25 @@
         </div>
 
         <!-- Rover Section -->
-        <div class="group relative bg-white rounded-2xl border-2 border-red-200 hover:border-red-400 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+        <div class="bg-white rounded-2xl border-2 border-red-200 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-[10px] uppercase font-black tracking-widest bg-red-100 text-red-800 px-2.5 py-1 rounded-md">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] uppercase font-black tracking-wider bg-red-100 text-red-800 px-2.5 py-0.5 rounded-md">
                 রোভার শাখা (Rover Scouts)
               </span>
-              <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+              <span class="w-2 h-2 rounded-full bg-red-500"></span>
             </div>
-            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-tr from-red-600 to-rose-500 rounded-2xl p-1 shadow-md flex items-center justify-center">
-              <div class="w-full h-full bg-red-50 rounded-xl flex items-center justify-center text-red-700">
-                <i data-lucide="compass" class="w-8 h-8"></i>
-              </div>
+            <div class="w-12 h-12 mx-auto mb-3 bg-red-100 rounded-xl flex items-center justify-center text-red-700">
+              <i data-lucide="compass" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-lg font-black text-gray-900 text-center">প্রেসিডেন্ট'স রোভার স্কাউট (PRS)</h3>
-            <p class="text-[11px] text-gray-500 text-center mt-1">President's Rover Scout Award</p>
-            <p class="text-xs text-gray-600 text-center mt-3 leading-relaxed">
-              রোভার স্কাউটদের শীর্ষ সম্মাননা ও সার্ভিস এপলেট। নিঃস্বার্থ সেবাব্রত ও নেতৃত্বের সর্বোচ্চ অর্জন।
+            <h3 class="text-base font-black text-gray-900 text-center">প্রেসিডেন্ট'স রোভার স্কাউট (PRS)</h3>
+            <p class="text-[10px] text-gray-500 text-center">President's Rover Scout Award</p>
+            <p class="text-xs text-gray-600 text-center mt-2 leading-relaxed">
+              রোভার স্কাউটদের শীর্ষ সম্মাননা। নিঃস্বার্থ সেবাব্রত ও নেতৃত্বের সর্বোচ্চ স্বীকৃতি।
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-red-100 text-center">
-            <button onclick="filterByCat('accessories')" class="w-full py-2.5 px-4 rounded-xl bg-red-700 hover:bg-red-800 text-white font-bold text-xs transition shadow-xs flex items-center justify-center space-x-1.5">
+          <div class="mt-4 pt-3 border-t border-red-100">
+            <button onclick="filterByCat('accessories')" class="w-full py-2 px-3 rounded-xl bg-red-700 hover:bg-red-800 text-white font-bold text-xs transition flex items-center justify-center space-x-1.5">
               <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
               <span>রোভার এপলেট ও এক্সেসরিজ</span>
             </button>
@@ -291,29 +304,29 @@
   </section>
 
   <!-- Products Section -->
-  <section id="products-section" class="py-12 bg-white border-t border-emerald-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="products-section" class="py-10 bg-white border-t border-emerald-50">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
       
       <!-- Section Title -->
-      <div class="mb-6">
-        <span class="text-[11px] font-bold text-brand-600 tracking-wider uppercase bg-brand-50 px-2.5 py-1 rounded-md">TP ROVERMART INVENTORY</span>
-        <div class="flex items-end justify-between mt-2">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-900 tracking-tight">Featured Scout Gear & Essentials</h2>
-          <p id="product-count-label" class="text-xs text-gray-500 font-medium">Showing items</p>
+      <div class="mb-4 sm:mb-6">
+        <span class="text-[10px] sm:text-[11px] font-bold text-brand-600 tracking-wider uppercase bg-brand-50 px-2 py-0.5 rounded">TP ROVERMART INVENTORY</span>
+        <div class="flex items-end justify-between mt-1.5">
+          <h2 class="text-lg sm:text-3xl font-extrabold text-brand-900 tracking-tight">Featured Scout Gear & Essentials</h2>
+          <p id="product-count-label" class="text-[11px] text-gray-500 font-medium">Showing items</p>
         </div>
       </div>
 
-      <!-- Professional Single Line Filter Bar -->
-      <div class="bg-gray-50 border border-gray-200/90 rounded-2xl p-2 sm:p-3 mb-8 shadow-sm">
-        <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-0.5">
+      <!-- Single Line Filter Bar -->
+      <div class="bg-gray-50 border border-gray-200/90 rounded-2xl p-2 sm:p-3 mb-6 shadow-xs">
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
           
-          <div class="relative min-w-[190px] sm:min-w-[220px] flex-1">
-            <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-            <input type="text" id="catalog-search" oninput="handleSearchFilter()" placeholder="পণ্য খুঁজুন (যেমন: Shirt, Scarf...)" class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent transition">
+          <div class="relative min-w-[150px] sm:min-w-[220px] flex-1">
+            <i data-lucide="search" class="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="catalog-search" oninput="handleSearchFilter()" placeholder="পণ্য খুঁজুন..." class="w-full pl-8 pr-2.5 py-1.5 sm:py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 transition">
           </div>
 
-          <div class="w-[150px] sm:w-[190px] shrink-0">
-            <select id="catalog-category-filter" onchange="handleSearchFilter()" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-600 cursor-pointer">
+          <div class="w-[125px] sm:w-[190px] shrink-0">
+            <select id="catalog-category-filter" onchange="handleSearchFilter()" class="w-full px-2.5 py-1.5 sm:py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-600 cursor-pointer">
               <option value="all">সব ক্যাটাগরি (All)</option>
               <option value="uniforms">Scout Uniforms</option>
               <option value="badges">Badges & Insignia</option>
@@ -327,19 +340,19 @@
             </select>
           </div>
 
-          <div class="w-[130px] sm:w-[160px] shrink-0">
-            <select id="catalog-sort" onchange="handleSearchFilter()" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-600 cursor-pointer">
-              <option value="featured">Featured First</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="name-asc">Name: A to Z</option>
+          <div class="w-[110px] sm:w-[160px] shrink-0">
+            <select id="catalog-sort" onchange="handleSearchFilter()" class="w-full px-2.5 py-1.5 sm:py-2 bg-white border border-gray-200 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-600 cursor-pointer">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low</option>
+              <option value="price-desc">Price: High</option>
+              <option value="name-asc">A to Z</option>
             </select>
           </div>
 
           <div class="shrink-0">
-            <button onclick="resetToAllItems()" id="btn-all-items" class="h-9 sm:h-10 px-4 sm:px-5 rounded-xl text-xs sm:text-sm font-bold bg-brand-800 hover:bg-brand-900 text-white shadow-xs transition flex items-center space-x-1.5 active:scale-95 whitespace-nowrap">
-              <i data-lucide="layers" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-gold"></i>
-              <span>All Items</span>
+            <button onclick="resetToAllItems()" id="btn-all-items" class="h-8 sm:h-10 px-3 sm:px-4 rounded-xl text-xs font-bold bg-brand-800 hover:bg-brand-900 text-white shadow-xs transition flex items-center space-x-1 active:scale-95 whitespace-nowrap">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-brand-gold"></i>
+              <span>All</span>
             </button>
           </div>
 
@@ -347,16 +360,15 @@
       </div>
 
       <!-- Products Grid -->
-      <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+      <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-6">
         <!-- Rendered via JavaScript -->
       </div>
 
       <!-- Empty State -->
-      <div id="catalog-empty-state" class="hidden text-center py-16 px-4 bg-gray-50 rounded-2xl border border-dashed border-gray-300">
-        <i data-lucide="package-search" class="w-12 h-12 text-gray-400 mx-auto mb-3"></i>
-        <h3 class="text-base font-bold text-gray-800">কোনো পণ্য খুঁজে পাওয়া যায়নি</h3>
-        <p class="text-xs text-gray-500 mt-1 max-w-sm mx-auto">অনুগ্রহ করে ভিন্ন কোনো নাম দিয়ে খুঁজুন অথবা "All Items" বাটনে ক্লিক করুন।</p>
-        <button onclick="resetToAllItems()" class="mt-4 px-4 py-2 bg-brand-800 text-white rounded-lg text-xs font-semibold hover:bg-brand-900 transition">
+      <div id="catalog-empty-state" class="hidden text-center py-12 px-4 bg-gray-50 rounded-2xl border border-dashed border-gray-300">
+        <i data-lucide="package-search" class="w-10 h-10 text-gray-400 mx-auto mb-2"></i>
+        <h3 class="text-sm font-bold text-gray-800">কোনো পণ্য খুঁজে পাওয়া যায়নি</h3>
+        <button onclick="resetToAllItems()" class="mt-3 px-3.5 py-1.5 bg-brand-800 text-white rounded-lg text-xs font-semibold hover:bg-brand-900 transition">
           সকল পণ্য দেখুন
         </button>
       </div>
@@ -365,71 +377,71 @@
   </section>
 
   <!-- Why Choose Us -->
-  <section id="why-choose-us" class="py-14 bg-brand-50/50 border-t border-brand-100">
+  <section id="why-choose-us" class="py-12 bg-brand-50/50 border-t border-brand-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <h2 class="text-2xl font-black text-brand-900">কেন TP RoverMart থেকে নেবেন?</h2>
-        <p class="text-xs text-gray-600 mt-1.5">স্কাউটিং মূল্যবোধ ও সেবার মানসিকতা নিয়ে প্রতিটি পণ্যের সর্বোচ্চ যত্ন নেওয়া হয়।</p>
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <h2 class="text-xl sm:text-2xl font-black text-brand-900">কেন TP RoverMart থেকে নেবেন?</h2>
+        <p class="text-xs text-gray-600 mt-1">স্কাউটিং মূল্যবোধ ও সেবার মানসিকতা নিয়ে প্রতিটি পণ্যের সর্বোচ্চ যত্ন নেওয়া হয়।</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3.5">
-            <i data-lucide="award" class="w-5 h-5"></i>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white p-4.5 rounded-2xl border border-emerald-100 shadow-xs">
+          <div class="w-9 h-9 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3">
+            <i data-lucide="award" class="w-4.5 h-4.5"></i>
           </div>
-          <h3 class="text-sm font-bold text-brand-900 mb-1">Scout-Focused Products</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">স্কাউট ও রোভারদের সুনির্দিষ্ট প্রয়োজন ও মাপ অনুযায়ী প্রস্তুতকৃত সামগ্রী।</p>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-1">Scout-Focused Products</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">স্কাউট ও রোভারদের সুনির্দিষ্ট প্রয়োজন ও মাপ অনুযায়ী প্রস্তুতকৃত সামগ্রী।</p>
         </div>
 
-        <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3.5">
-            <i data-lucide="compass" class="w-5 h-5"></i>
+        <div class="bg-white p-4.5 rounded-2xl border border-emerald-100 shadow-xs">
+          <div class="w-9 h-9 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3">
+            <i data-lucide="compass" class="w-4.5 h-4.5"></i>
           </div>
-          <h3 class="text-sm font-bold text-brand-900 mb-1">Durable & Tested</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">হাইকিং, ক্যাম্পিং ও আউটডোর ট্রেনিংয়ের উপযোগী টেকসই ফেব্রিক ও গিয়ার।</p>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-1">Durable & Tested</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">হাইকিং, ক্যাম্পিং ও আউটডোর ট্রেনিংয়ের উপযোগী টেকসই ফেব্রিক ও গিয়ার।</p>
         </div>
 
-        <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3.5">
-            <i data-lucide="database" class="w-5 h-5"></i>
+        <div class="bg-white p-4.5 rounded-2xl border border-emerald-100 shadow-xs">
+          <div class="w-9 h-9 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3">
+            <i data-lucide="database" class="w-4.5 h-4.5"></i>
           </div>
-          <h3 class="text-sm font-bold text-brand-900 mb-1">Live Backend Storage</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">প্রতিটি অর্ডার স্বয়ংক্রিয়ভাবে আমাদের স্টোর ডাটাবেজে রেকর্ড করা হয়।</p>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-1">Live Backend Storage</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">প্রতিটি অর্ডার স্বয়ংক্রিয়ভাবে আমাদের স্টোর ডাটাবেজে রেকর্ড করা হয়।</p>
         </div>
 
-        <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3.5">
-            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+        <div class="bg-white p-4.5 rounded-2xl border border-emerald-100 shadow-xs">
+          <div class="w-9 h-9 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3">
+            <i data-lucide="heart-handshake" class="w-4.5 h-4.5"></i>
           </div>
-          <h3 class="text-sm font-bold text-brand-900 mb-1">Service & Scout Spirit</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">বন্ধুত্বপূর্ণ সহায়তা ও স্কাউট ভ্রাতৃত্ববোধের আদর্শে পরিচালিত।</p>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-1">Service & Scout Spirit</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">বন্ধুত্বপূর্ণ সহায়তা ও স্কাউট ভ্রাতৃত্ববোধের আদর্শে পরিচালিত।</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contact-footer" class="bg-brand-900 text-white pt-14 pb-8 border-t border-brand-800 mt-auto">
+  <footer id="contact-footer" class="bg-brand-900 text-white pt-10 sm:pt-14 pb-8 border-t border-brand-800 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-brand-800">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-8 pb-8 border-b border-brand-800">
         
         <!-- Brand Info -->
-        <div class="md:col-span-1 space-y-3">
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-full overflow-hidden border border-brand-gold bg-emerald-50 shrink-0">
+        <div class="md:col-span-1 space-y-2.5">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-9 h-9 rounded-full overflow-hidden border border-brand-gold bg-emerald-50 shrink-0">
               <img src="1000121648-01.jpeg" alt="TP RoverMart Logo" class="w-full h-full object-contain" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&auto=format&fit=crop&q=80'">
             </div>
-            <span class="text-xl font-black tracking-tight text-white">TP ROVERMART</span>
+            <span class="text-lg font-black tracking-tight text-white">TP ROVERMART</span>
           </div>
-          <p class="text-xs text-emerald-200/80 leading-relaxed">
+          <p class="text-[11px] sm:text-xs text-emerald-200/80 leading-relaxed">
             স্কাউট, রোভার ও আউটডোর অ্যাডভেঞ্চারারদের জন্য বিশ্বস্ত শপ। গুণগত মান ও সহজ ডিজিটাল অর্ডারিং।
           </p>
         </div>
 
         <!-- Links -->
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">নেভিগেশন</h4>
-          <ul class="space-y-2 text-xs text-emerald-100/80">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2.5">নেভিগেশন</h4>
+          <ul class="space-y-1.5 text-xs text-emerald-100/80">
             <li><a href="#hero-section" class="hover:text-white transition">হোমপেইজ</a></li>
             <li><a href="#scouting-progress" class="hover:text-white transition">স্কাউটিং প্রগ্রেস</a></li>
             <li><a href="#products-section" class="hover:text-white transition">সকল পণ্য</a></li>
@@ -439,8 +451,8 @@
 
         <!-- Categories -->
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">জনপ্রিয় ক্যাটাগরি</h4>
-          <ul class="space-y-2 text-xs text-emerald-100/80">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2.5">জনপ্রিয় ক্যাটাগরি</h4>
+          <ul class="space-y-1.5 text-xs text-emerald-100/80">
             <li><a href="#products-section" onclick="filterByCat('uniforms')" class="hover:text-white transition">Scout Uniforms</a></li>
             <li><a href="#products-section" onclick="filterByCat('scarves')" class="hover:text-white transition">Scarves & Woggles</a></li>
             <li><a href="#products-section" onclick="filterByCat('camping')" class="hover:text-white transition">Camping Gear</a></li>
@@ -449,84 +461,84 @@
 
         <!-- Contact details -->
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">এডমিন ও সহায়তা</h4>
-          <p class="text-xs text-emerald-200/90 mb-3">ম্যানেজমেন্টের জন্য অ্যাডমিন প্যানেলে লগইন করুন:</p>
-          <button onclick="checkAdminStatusAndOpen()" class="inline-flex items-center space-x-2 bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
-            <i data-lucide="shield-alert" class="w-4 h-4 text-brand-gold"></i>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2.5">এডমিন ও সহায়তা</h4>
+          <p class="text-xs text-emerald-200/90 mb-2.5">ম্যানেজমেন্টের জন্য অ্যাডমিন প্যানেলে লগইন করুন:</p>
+          <button onclick="checkAdminStatusAndOpen()" class="inline-flex items-center space-x-1.5 bg-emerald-700 hover:bg-emerald-600 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition shadow-xs">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-brand-gold"></i>
             <span>Admin Portal Login</span>
           </button>
         </div>
 
       </div>
 
-      <div class="flex flex-col sm:flex-row justify-between items-center text-[11px] text-emerald-300/70">
-        <p>&copy; <span id="current-year"></span> TP RoverMart. All rights reserved. Scouting for a better world.</p>
-        <p class="mt-2 sm:mt-0">E-Commerce Web App with Integrated Admin Back-end</p>
+      <div class="flex flex-col sm:flex-row justify-between items-center text-[10px] sm:text-[11px] text-emerald-300/70 text-center sm:text-left gap-1">
+        <p>&copy; <span id="current-year"></span> TP RoverMart. All rights reserved.</p>
+        <p>E-Commerce Web App with Integrated Admin Back-end</p>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp Action Button -->
-  <div class="fixed bottom-6 right-6 z-40">
-    <button onclick="handleGeneralInquiry()" aria-label="WhatsApp Helpline" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-3 rounded-full shadow-2xl transition transform hover:scale-105 border-2 border-white/20">
+  <div class="fixed bottom-5 right-5 z-40">
+    <button onclick="handleGeneralInquiry()" aria-label="WhatsApp Helpline" class="flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold p-3 sm:px-4 sm:py-3 rounded-full shadow-2xl transition transform hover:scale-105 border-2 border-white/20">
       <i data-lucide="message-circle" class="w-5 h-5"></i>
       <span class="text-xs tracking-wide hidden sm:inline">Help Desk</span>
     </button>
   </div>
 
   <!-- Dual Action Order Modal -->
-  <div id="order-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in zoom-in duration-150">
+  <div id="order-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-2xl max-w-sm sm:max-w-md w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in zoom-in duration-150">
       
-      <div class="px-5 py-4 bg-brand-900 text-white flex items-center justify-between">
+      <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between">
         <div class="flex items-center space-x-2">
           <i data-lucide="shopping-cart" class="w-4 h-4 text-brand-gold"></i>
-          <h3 class="text-sm font-bold">পণ্য অর্ডার করুন</h3>
+          <h3 class="text-xs sm:text-sm font-bold">পণ্য অর্ডার করুন</h3>
         </div>
         <button onclick="closeOrderModal()" class="text-gray-300 hover:text-white p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <div class="p-5">
-        <div class="flex space-x-4 mb-5">
-          <img id="modal-product-img" src="" alt="Product" class="w-20 h-20 rounded-xl object-cover border border-gray-200">
-          <div>
-            <span id="modal-product-cat" class="text-[10px] uppercase font-bold text-brand-600 tracking-wider">CATEGORY</span>
-            <h4 id="modal-product-name" class="text-base font-bold text-gray-900 leading-snug">Product Name</h4>
+      <div class="p-4 sm:p-5">
+        <div class="flex space-x-3.5 mb-4">
+          <img id="modal-product-img" src="" alt="Product" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border border-gray-200">
+          <div class="min-w-0">
+            <span id="modal-product-cat" class="text-[9px] uppercase font-bold text-brand-600 tracking-wider">CATEGORY</span>
+            <h4 id="modal-product-name" class="text-sm sm:text-base font-bold text-gray-900 leading-snug truncate">Product Name</h4>
             <div class="flex items-baseline space-x-2 mt-1">
-              <span id="modal-product-price" class="text-lg font-black text-brand-900">৳0</span>
+              <span id="modal-product-price" class="text-base sm:text-lg font-black text-brand-900">৳0</span>
               <span id="modal-product-old-price" class="text-xs text-gray-400 line-through"></span>
             </div>
           </div>
         </div>
 
-        <div id="modal-variant-container" class="mb-4">
-          <label class="block text-xs font-semibold text-gray-700 mb-1.5">সাইজ / ভ্যারিয়েন্ট নির্বাচন করুন:</label>
-          <div id="modal-variant-options" class="flex flex-wrap gap-2"></div>
+        <div id="modal-variant-container" class="mb-3.5">
+          <label class="block text-xs font-semibold text-gray-700 mb-1">সাইজ / ভ্যারিয়েন্ট:</label>
+          <div id="modal-variant-options" class="flex flex-wrap gap-1.5"></div>
         </div>
 
-        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-xl border border-gray-200 mb-6">
+        <div class="flex items-center justify-between bg-gray-50 p-2.5 sm:p-3 rounded-xl border border-gray-200 mb-4">
           <span class="text-xs font-semibold text-gray-700">পরিমাণ (Quantity):</span>
-          <div class="flex items-center space-x-3">
-            <button onclick="changeModalQty(-1)" class="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-100 font-bold">-</button>
-            <span id="modal-qty" class="text-sm font-black w-6 text-center text-gray-900">1</span>
-            <button onclick="changeModalQty(1)" class="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-100 font-bold">+</button>
+          <div class="flex items-center space-x-2.5">
+            <button onclick="changeModalQty(-1)" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-100 font-bold">-</button>
+            <span id="modal-qty" class="text-xs sm:text-sm font-black w-5 text-center text-gray-900">1</span>
+            <button onclick="changeModalQty(1)" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-100 font-bold">+</button>
           </div>
         </div>
 
-        <div class="flex justify-between items-center text-xs text-gray-500 mb-5 pb-3 border-b border-gray-100">
+        <div class="flex justify-between items-center text-xs text-gray-500 mb-4 pb-2.5 border-b border-gray-100">
           <span>সাব-টোটাল:</span>
           <span id="modal-subtotal" class="text-sm font-bold text-brand-900">৳0</span>
         </div>
 
-        <div class="grid grid-cols-2 gap-3">
-          <button onclick="confirmAddToCart()" class="w-full py-3 px-4 rounded-xl border-2 border-brand-700 text-brand-800 hover:bg-brand-50 text-xs font-bold transition flex items-center justify-center space-x-1.5">
-            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        <div class="grid grid-cols-2 gap-2.5">
+          <button onclick="confirmAddToCart()" class="w-full py-2.5 sm:py-3 px-3 rounded-xl border-2 border-brand-700 text-brand-800 hover:bg-brand-50 text-xs font-bold transition flex items-center justify-center space-x-1.5 active:scale-95">
+            <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
             <span>Add to Cart</span>
           </button>
-          <button onclick="openDirectCheckoutFromModal()" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition flex items-center justify-center space-x-1.5">
-            <i data-lucide="zap" class="w-4 h-4"></i>
+          <button onclick="openDirectCheckoutFromModal()" class="w-full py-2.5 sm:py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition flex items-center justify-center space-x-1.5 active:scale-95">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
             <span>Buy Now</span>
           </button>
         </div>
@@ -538,26 +550,26 @@
   <div id="cart-drawer-overlay" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/50 z-50 backdrop-blur-xs hidden transition-opacity"></div>
   <aside id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full sm:w-96 bg-white z-50 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
     
-    <div class="px-5 py-4 bg-brand-900 text-white flex items-center justify-between">
+    <div class="px-4 py-3.5 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
       <div class="flex items-center space-x-2">
-        <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-gold"></i>
-        <h3 class="text-sm font-bold">Shopping Cart (<span id="cart-item-count">0</span>)</h3>
+        <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-gold"></i>
+        <h3 class="text-xs sm:text-sm font-bold">Shopping Cart (<span id="cart-item-count">0</span>)</h3>
       </div>
       <button onclick="toggleCartDrawer(false)" class="text-gray-300 hover:text-white p-1">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
     </div>
 
-    <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar"></div>
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-3 sm:p-4 space-y-2.5 custom-scrollbar"></div>
 
-    <div id="cart-footer" class="p-4 bg-gray-50 border-t border-gray-200">
-      <div class="flex justify-between items-center text-sm font-bold text-gray-900 mb-1">
+    <div id="cart-footer" class="p-3.5 sm:p-4 bg-gray-50 border-t border-gray-200 shrink-0">
+      <div class="flex justify-between items-center text-xs sm:text-sm font-bold text-gray-900 mb-1">
         <span>সাবটোটাল:</span>
-        <span id="cart-subtotal-display" class="text-brand-900 text-base font-black">৳0</span>
+        <span id="cart-subtotal-display" class="text-brand-900 text-sm sm:text-base font-black">৳0</span>
       </div>
-      <p class="text-[10px] text-gray-500 mb-4">অর্ডার কনফার্ম করার পর তা ব্যাকএন্ডে সংরক্ষিত হবে।</p>
+      <p class="text-[10px] text-gray-500 mb-3">অর্ডার কনফার্ম করার পর তা ব্যাকএন্ডে সংরক্ষিত হবে।</p>
       
-      <button onclick="openCheckoutModal()" class="w-full py-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white text-xs font-bold flex items-center justify-center space-x-2 shadow-md transition">
+      <button onclick="openCheckoutModal()" class="w-full py-2.5 sm:py-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white text-xs font-bold flex items-center justify-center space-x-1.5 shadow-md transition active:scale-95">
         <span>অর্ডার সম্পন্ন করুন (Checkout)</span>
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </button>
@@ -565,52 +577,52 @@
   </aside>
 
   <!-- Checkout Information Modal -->
-  <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in duration-150 max-h-[90vh] flex flex-col">
-      <div class="px-5 py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
+  <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-200 animate-in fade-in duration-150 max-h-[92vh] flex flex-col">
+      <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
         <div class="flex items-center space-x-2">
-          <i data-lucide="clipboard-check" class="w-5 h-5 text-brand-gold"></i>
-          <h3 class="text-sm font-bold">ডেলিভারি তথ্য দিন ও অর্ডার কনফার্ম করুন</h3>
+          <i data-lucide="clipboard-check" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-gold"></i>
+          <h3 class="text-xs sm:text-sm font-bold">ডেলিভারি তথ্য দিন ও কনফার্ম করুন</h3>
         </div>
         <button onclick="closeCheckoutModal()" class="text-gray-300 hover:text-white p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <form id="checkout-form" onsubmit="handleOrderSubmission(event)" class="p-5 space-y-3 overflow-y-auto custom-scrollbar">
+      <form id="checkout-form" onsubmit="handleOrderSubmission(event)" class="p-4 sm:p-5 space-y-3 overflow-y-auto custom-scrollbar">
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">আপনার নাম (Full Name) *</label>
-          <input type="text" id="cust-name" required placeholder="আপনার নাম লিখুন" class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          <input type="text" id="cust-name" required placeholder="আপনার নাম লিখুন" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
           <div>
             <label class="block text-xs font-semibold text-gray-700 mb-1">মোবাইল নম্বর (11 Digit) *</label>
-            <input type="tel" id="cust-phone" required pattern="01[3-9][0-9]{8}" placeholder="01XXXXXXXXX" class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            <input type="tel" id="cust-phone" required pattern="01[3-9][0-9]{8}" placeholder="01XXXXXXXXX" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
           </div>
           <div>
             <label class="block text-xs font-semibold text-gray-700 mb-1">জেলা / শহর (District/City) *</label>
-            <input type="text" id="cust-city" required placeholder="ঢাকা / ময়মনসিংহ / চট্টগ্রাম" class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            <input type="text" id="cust-city" required placeholder="ঢাকা / ময়মনসিংহ / চট্টগ্রাম" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
           </div>
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">সম্পূর্ণ ঠিকানা (Full Address) *</label>
-          <textarea id="cust-address" required rows="2" placeholder="বাড়ি নং, রোড, থানা/উপজেলা..." class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+          <textarea id="cust-address" required rows="2" placeholder="বাড়ি নং, রোড, থানা/উপজেলা..." class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">বিশেষ নোট / Troop Info (ঐচ্ছিক)</label>
-          <input type="text" id="cust-notes" placeholder="উদাহরণ: নির্দিষ্ট সাইজ বা ব্যাজ নাম" class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          <input type="text" id="cust-notes" placeholder="নির্দিষ্ট সাইজ বা ব্যাজ নাম" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:outline-none">
         </div>
 
-        <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-[11px] text-emerald-800 flex items-start space-x-2">
-          <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-          <span>আপনার অর্ডারটি সাথে সাথে সিস্টেম ব্যাকএন্ডে সংরক্ষিত হবে এবং অ্যাডমিন এটি যাচাই করবে।</span>
+        <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl text-[11px] text-emerald-800 flex items-start space-x-2">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span>আপনার অর্ডারটি সাথে সাথে সিস্টেম ব্যাকএন্ডে সংরক্ষিত হবে এবং আমরা যোগাযোগ করব।</span>
         </div>
 
-        <div class="pt-2">
-          <button type="submit" class="w-full py-3 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-md transition">
+        <div class="pt-1.5">
+          <button type="submit" class="w-full py-2.5 sm:py-3 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-md transition active:scale-95">
             <i data-lucide="check" class="w-4 h-4 text-brand-gold"></i>
             <span>অর্ডার সাবমিট করুন (Place Order)</span>
           </button>
@@ -620,50 +632,46 @@
   </div>
 
   <!-- Order Success Modal -->
-  <div id="order-success-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl border border-gray-200">
-      <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-        <i data-lucide="check-check" class="w-8 h-8"></i>
+  <div id="order-success-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 sm:p-6 text-center shadow-2xl border border-gray-200">
+      <div class="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="check-check" class="w-7 h-7 sm:w-8 sm:h-8"></i>
       </div>
-      <h3 class="text-lg font-bold text-gray-900 mb-1">অর্ডার সফলভাবে সেভ হয়েছে!</h3>
-      <p class="text-xs text-gray-600 mb-3">আপনার অর্ডার নম্বর: <span id="success-order-id" class="font-bold text-brand-800"></span></p>
-      <p class="text-[11px] text-gray-500 mb-5">তথ্যটি ওয়েবসাইটের ব্যাকএন্ডে সেভ করা হয়েছে। আপনি চাইলে ব্যাকআপ হিসেবে হোয়াটসঅ্যাপেও পাঠাতে পারেন।</p>
+      <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-1">অর্ডার সফলভাবে সেভ হয়েছে!</h3>
+      <p class="text-xs text-gray-600 mb-2">অর্ডার আইডি: <span id="success-order-id" class="font-bold text-brand-800"></span></p>
+      <p class="text-[11px] text-gray-500 mb-4">তথ্যটি ওয়েবসাইটের ব্যাকএন্ডে সেভ করা হয়েছে।</p>
       <div class="space-y-2">
-        <button id="success-wa-btn" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center space-x-2 shadow-sm">
+        <button id="success-wa-btn" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center space-x-1.5 shadow-xs">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>WhatsApp এ কপি পাঠান (ঐচ্ছিক)</span>
+          <span>WhatsApp এ কপি পাঠান</span>
         </button>
-        <button onclick="closeOrderSuccessModal()" class="w-full py-2.5 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-semibold">
+        <button onclick="closeOrderSuccessModal()" class="w-full py-2 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-semibold">
           বন্ধ করুন
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ========================================== -->
-  <!-- ADMIN AUTH & BACKEND SYSTEM MODAL          -->
-  <!-- ========================================== -->
-
   <!-- Admin Login Modal -->
-  <div id="admin-login-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div id="admin-login-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
     <div class="bg-white rounded-2xl max-w-sm w-full overflow-hidden shadow-2xl border border-gray-200">
-      <div class="px-5 py-4 bg-brand-900 text-white flex items-center justify-between">
+      <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <i data-lucide="lock" class="w-5 h-5 text-brand-gold"></i>
-          <h3 class="text-sm font-bold">Admin Portal Login</h3>
+          <i data-lucide="lock" class="w-4 h-4 text-brand-gold"></i>
+          <h3 class="text-xs sm:text-sm font-bold">Admin Portal Login</h3>
         </div>
         <button onclick="toggleAdminLoginModal(false)" class="text-gray-300 hover:text-white p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
-      <form id="admin-login-form" onsubmit="handleAdminLogin(event)" class="p-6 space-y-4">
+      <form id="admin-login-form" onsubmit="handleAdminLogin(event)" class="p-5 space-y-3.5">
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">Username</label>
-          <input type="text" id="admin-user-input" required class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-700 focus:outline-none" placeholder="Enter username">
+          <input type="text" id="admin-user-input" required class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-700 focus:outline-none" placeholder="Enter username">
         </div>
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">Password</label>
-          <input type="password" id="admin-pass-input" required class="w-full px-3.5 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-700 focus:outline-none" placeholder="Enter password">
+          <input type="password" id="admin-pass-input" required class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-700 focus:outline-none" placeholder="Enter password">
         </div>
         <p id="admin-login-error" class="text-red-600 text-[11px] font-semibold hidden text-center">ভুল ইউজারনেম অথবা পাসওয়ার্ড!</p>
         <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs shadow-md transition flex items-center justify-center space-x-1.5">
@@ -676,74 +684,74 @@
 
   <!-- Admin Backend Panel Fullscreen Modal -->
   <div id="admin-panel-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-2 sm:p-6">
-    <div class="bg-gray-50 rounded-2xl w-full max-w-6xl h-[92vh] flex flex-col shadow-2xl border border-gray-200 overflow-hidden">
+    <div class="bg-gray-50 rounded-2xl w-full max-w-6xl h-[94vh] flex flex-col shadow-2xl border border-gray-200 overflow-hidden">
       
       <!-- Admin Panel Header -->
-      <div class="px-6 py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
-        <div class="flex items-center space-x-3">
-          <div class="p-2 bg-brand-800 rounded-lg text-brand-gold">
-            <i data-lucide="shield" class="w-5 h-5"></i>
+      <div class="px-4 py-3 sm:px-6 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
+        <div class="flex items-center space-x-2.5">
+          <div class="p-1.5 sm:p-2 bg-brand-800 rounded-lg text-brand-gold">
+            <i data-lucide="shield" class="w-4 h-4 sm:w-5 sm:h-5"></i>
           </div>
           <div>
-            <h3 class="text-base font-black tracking-wide">TP ROVERMART — ADMIN BACKEND</h3>
-            <p class="text-[10px] text-emerald-300">Logged in as: <span class="font-bold">dev-TP</span></p>
+            <h3 class="text-xs sm:text-base font-black tracking-wide">TP ROVERMART — ADMIN</h3>
+            <p class="text-[9px] sm:text-[10px] text-emerald-300">User: <span class="font-bold">dev-TP</span></p>
           </div>
         </div>
         <div class="flex items-center space-x-2">
-          <button onclick="handleAdminLogout()" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 rounded-lg text-xs font-bold transition flex items-center space-x-1">
-            <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+          <button onclick="handleAdminLogout()" class="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-red-600 hover:bg-red-700 rounded-lg text-[11px] sm:text-xs font-bold transition flex items-center space-x-1">
+            <i data-lucide="log-out" class="w-3 h-3"></i>
             <span>লগআউট</span>
           </button>
-          <button onclick="toggleAdminPanel(false)" class="p-1.5 text-gray-300 hover:text-white rounded-lg">
+          <button onclick="toggleAdminPanel(false)" class="p-1 text-gray-300 hover:text-white rounded-lg">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
       </div>
 
       <!-- Navigation Tabs -->
-      <div class="bg-white border-b border-gray-200 px-6 py-2 flex space-x-4 shrink-0">
-        <button onclick="switchAdminTab('dashboard')" id="tab-btn-dashboard" class="px-4 py-2 font-bold text-xs rounded-lg bg-brand-50 text-brand-800 transition flex items-center space-x-1.5">
-          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+      <div class="bg-white border-b border-gray-200 px-3 sm:px-6 py-2 flex space-x-2 sm:space-x-4 shrink-0 overflow-x-auto no-scrollbar">
+        <button onclick="switchAdminTab('dashboard')" id="tab-btn-dashboard" class="px-3 sm:px-4 py-1.5 sm:py-2 font-bold text-xs rounded-lg bg-brand-50 text-brand-800 transition flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="layout-dashboard" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
           <span>ড্যাশবোর্ড</span>
         </button>
-        <button onclick="switchAdminTab('orders')" id="tab-btn-orders" class="px-4 py-2 font-bold text-xs rounded-lg text-gray-600 hover:bg-gray-100 transition flex items-center space-x-1.5">
-          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        <button onclick="switchAdminTab('orders')" id="tab-btn-orders" class="px-3 sm:px-4 py-1.5 sm:py-2 font-bold text-xs rounded-lg text-gray-600 hover:bg-gray-100 transition flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="shopping-bag" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
           <span>অর্ডার সমূহ (<span id="admin-orders-count-badge">0</span>)</span>
         </button>
-        <button onclick="switchAdminTab('products')" id="tab-btn-products" class="px-4 py-2 font-bold text-xs rounded-lg text-gray-600 hover:bg-gray-100 transition flex items-center space-x-1.5">
-          <i data-lucide="package" class="w-4 h-4"></i>
+        <button onclick="switchAdminTab('products')" id="tab-btn-products" class="px-3 sm:px-4 py-1.5 sm:py-2 font-bold text-xs rounded-lg text-gray-600 hover:bg-gray-100 transition flex items-center space-x-1.5 whitespace-nowrap">
+          <i data-lucide="package" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
           <span>প্রোডাক্ট ম্যানেজমেন্ট (<span id="admin-products-count-badge">0</span>)</span>
         </button>
       </div>
 
       <!-- Admin Content Area -->
-      <div class="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar">
+      <div class="flex-1 overflow-y-auto p-3 sm:p-6 custom-scrollbar">
 
         <!-- TAB 1: DASHBOARD -->
-        <div id="admin-view-dashboard" class="space-y-6">
-          <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
-              <span class="text-xs text-gray-500 font-semibold">মোট সেলস মূল্য</span>
-              <h4 id="stat-total-sales" class="text-2xl font-black text-brand-900 mt-1">৳0</h4>
+        <div id="admin-view-dashboard" class="space-y-4 sm:space-y-6">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+            <div class="bg-white p-3 sm:p-4 rounded-xl border border-gray-200 shadow-xs">
+              <span class="text-[10px] sm:text-xs text-gray-500 font-semibold">মোট সেলস</span>
+              <h4 id="stat-total-sales" class="text-base sm:text-2xl font-black text-brand-900 mt-1">৳0</h4>
             </div>
-            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
-              <span class="text-xs text-gray-500 font-semibold">মোট অর্ডার সংখ্যা</span>
-              <h4 id="stat-total-orders" class="text-2xl font-black text-brand-900 mt-1">0</h4>
+            <div class="bg-white p-3 sm:p-4 rounded-xl border border-gray-200 shadow-xs">
+              <span class="text-[10px] sm:text-xs text-gray-500 font-semibold">মোট অর্ডার</span>
+              <h4 id="stat-total-orders" class="text-base sm:text-2xl font-black text-brand-900 mt-1">0</h4>
             </div>
-            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
-              <span class="text-xs text-gray-500 font-semibold">পেন্ডিং অর্ডার</span>
-              <h4 id="stat-pending-orders" class="text-2xl font-black text-amber-600 mt-1">0</h4>
+            <div class="bg-white p-3 sm:p-4 rounded-xl border border-gray-200 shadow-xs">
+              <span class="text-[10px] sm:text-xs text-gray-500 font-semibold">পেন্ডিং অর্ডার</span>
+              <h4 id="stat-pending-orders" class="text-base sm:text-2xl font-black text-amber-600 mt-1">0</h4>
             </div>
-            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs">
-              <span class="text-xs text-gray-500 font-semibold">একটিভ প্রোডাক্ট</span>
-              <h4 id="stat-total-products" class="text-2xl font-black text-emerald-700 mt-1">0</h4>
+            <div class="bg-white p-3 sm:p-4 rounded-xl border border-gray-200 shadow-xs">
+              <span class="text-[10px] sm:text-xs text-gray-500 font-semibold">একটিভ প্রোডাক্ট</span>
+              <h4 id="stat-total-products" class="text-base sm:text-2xl font-black text-emerald-700 mt-1">0</h4>
             </div>
           </div>
 
-          <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-            <h4 class="text-sm font-bold text-gray-900 mb-3 flex items-center space-x-1.5">
+          <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-gray-200 shadow-xs">
+            <h4 class="text-xs sm:text-sm font-bold text-gray-900 mb-3 flex items-center space-x-1.5">
               <i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i>
-              <span>সাম্প্রতিক অর্ডারগুলো (Recent 5 Orders)</span>
+              <span>সাম্প্রতিক ৫টি অর্ডার</span>
             </h4>
             <div id="dashboard-recent-orders-table" class="overflow-x-auto">
               <!-- Rendered via JS -->
@@ -753,33 +761,33 @@
 
         <!-- TAB 2: ORDERS -->
         <div id="admin-view-orders" class="hidden space-y-4">
-          <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 bg-white p-4 rounded-xl border border-gray-200">
+          <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 bg-white p-3.5 sm:p-4 rounded-xl border border-gray-200">
             <div>
-              <h4 class="text-sm font-bold text-gray-900">সকল গ্রাহকের অর্ডার তালিকা</h4>
-              <p class="text-xs text-gray-500">গ্রাহক ওয়েবসাইট থেকে অর্ডার করলেই এখানে দেখতে পাবেন।</p>
+              <h4 class="text-xs sm:text-sm font-bold text-gray-900">সকল গ্রাহকের অর্ডার তালিকা</h4>
+              <p class="text-[11px] text-gray-500">গ্রাহক অর্ডার করলেই সরাসরি এখানে চলে আসবে।</p>
             </div>
-            <div class="flex items-center space-x-2">
-              <button onclick="clearAllOrders()" class="px-3 py-1.5 bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 rounded-lg text-xs font-bold transition">
+            <div>
+              <button onclick="clearAllOrders()" class="px-2.5 py-1 bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 rounded-lg text-xs font-bold transition">
                 সব অর্ডার ক্লিয়ার
               </button>
             </div>
           </div>
 
-          <div id="admin-orders-list-container" class="space-y-4">
+          <div id="admin-orders-list-container" class="space-y-3">
             <!-- Rendered via JS -->
           </div>
         </div>
 
         <!-- TAB 3: PRODUCTS (ADD / EDIT) -->
-        <div id="admin-view-products" class="hidden space-y-6">
-          <div class="flex justify-between items-center bg-white p-4 rounded-xl border border-gray-200">
+        <div id="admin-view-products" class="hidden space-y-4 sm:space-y-6">
+          <div class="flex justify-between items-center bg-white p-3 sm:p-4 rounded-xl border border-gray-200">
             <div>
-              <h4 class="text-sm font-bold text-gray-900">ইনভেন্টরি প্রোডাক্টস</h4>
-              <p class="text-xs text-gray-500">নতুন পণ্য যোগ করুন বা বিদ্যমান পণ্য সম্পাদনা করুন।</p>
+              <h4 class="text-xs sm:text-sm font-bold text-gray-900">ইনভেন্টরি প্রোডাক্টস</h4>
+              <p class="text-[11px] text-gray-500">পণ্য যোগ ও এডিট করুন।</p>
             </div>
-            <button onclick="openProductEditModal(null)" class="px-4 py-2 bg-brand-800 hover:bg-brand-900 text-white rounded-xl text-xs font-bold flex items-center space-x-1.5 shadow-sm transition">
-              <i data-lucide="plus-circle" class="w-4 h-4 text-brand-gold"></i>
-              <span>নতুন প্রোডাক্ট যোগ করুন</span>
+            <button onclick="openProductEditModal(null)" class="px-3 py-1.5 sm:px-4 sm:py-2 bg-brand-800 hover:bg-brand-900 text-white rounded-xl text-xs font-bold flex items-center space-x-1 shadow-xs transition">
+              <i data-lucide="plus-circle" class="w-3.5 h-3.5 text-brand-gold"></i>
+              <span>নতুন প্রোডাক্ট</span>
             </button>
           </div>
 
@@ -792,28 +800,28 @@
     </div>
   </div>
 
-  <!-- Product Add / Edit Modal -->
-  <div id="admin-product-edit-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-xl w-full overflow-hidden shadow-2xl border border-gray-200 max-h-[92vh] flex flex-col">
-      <div class="px-5 py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
-        <h3 id="product-modal-title" class="text-sm font-bold">নতুন প্রোডাক্ট যুক্ত করুন</h3>
+  <!-- Product Add / Edit Modal (সরাসরি ফাইল আপলোড ও প্রিভিউ সমৃদ্ধ) -->
+  <div id="admin-product-edit-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-200 max-h-[92vh] flex flex-col">
+      <div class="px-4 py-3 sm:px-5 sm:py-4 bg-brand-900 text-white flex items-center justify-between shrink-0">
+        <h3 id="product-modal-title" class="text-xs sm:text-sm font-bold">নতুন প্রোডাক্ট যুক্ত করুন</h3>
         <button onclick="closeProductEditModal()" class="text-gray-300 hover:text-white p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <form id="product-edit-form" onsubmit="saveProductFromForm(event)" class="p-5 space-y-3 overflow-y-auto custom-scrollbar">
+      <form id="product-edit-form" onsubmit="saveProductFromForm(event)" class="p-4 sm:p-5 space-y-3 overflow-y-auto custom-scrollbar">
         <input type="hidden" id="edit-prod-id">
 
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">প্রোডাক্টের নাম *</label>
-          <input type="text" id="edit-prod-name" required placeholder="যেমন: Official Rover Epaulet" class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+          <input type="text" id="edit-prod-name" required placeholder="Official Rover Epaulet" class="w-full px-3 py-1.5 sm:py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
         </div>
 
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-2.5">
           <div>
             <label class="block text-xs font-semibold text-gray-700 mb-1">ক্যাটাগরি *</label>
-            <select id="edit-prod-category" required class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+            <select id="edit-prod-category" required class="w-full px-2.5 py-1.5 sm:py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
               <option value="uniforms">Scout Uniforms</option>
               <option value="badges">Badges & Insignia</option>
               <option value="scarves">Scarves & Neckerchiefs</option>
@@ -827,39 +835,59 @@
           </div>
           <div>
             <label class="block text-xs font-semibold text-gray-700 mb-1">ট্যাগ / ব্যাজ (ঐচ্ছিক)</label>
-            <input type="text" id="edit-prod-tag" placeholder="যেমন: FEATURED, POPULAR" class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+            <input type="text" id="edit-prod-tag" placeholder="FEATURED, POPULAR" class="w-full px-3 py-1.5 sm:py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-2.5">
           <div>
             <label class="block text-xs font-semibold text-gray-700 mb-1">বিক্রয় মূল্য (৳) *</label>
-            <input type="number" id="edit-prod-price" required min="1" placeholder="850" class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+            <input type="number" id="edit-prod-price" required min="1" placeholder="850" class="w-full px-3 py-1.5 sm:py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
           </div>
           <div>
             <label class="block text-xs font-semibold text-gray-700 mb-1">আগের মূল্য (৳) (ঐচ্ছিক)</label>
-            <input type="number" id="edit-prod-oldprice" min="0" placeholder="950" class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+            <input type="number" id="edit-prod-oldprice" min="0" placeholder="950" class="w-full px-3 py-1.5 sm:py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
           </div>
         </div>
 
+        <!-- সরাসরি ফাইল আপলোড (ছবি বা ক্যামেরা থেকে)[span_1](start_span)[span_1](end_span) -->
         <div>
-          <label class="block text-xs font-semibold text-gray-700 mb-1">ছবির লিঙ্ক (Image URL) *</label>
-          <input type="url" id="edit-prod-image" required placeholder="https://..." class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+          <label class="block text-xs font-semibold text-gray-700 mb-1">প্রোডাক্টের ছবি আপলোড করুন *</label>
+          <div class="mt-1 flex items-center gap-3">
+            <label for="edit-prod-file" class="flex-1 cursor-pointer flex flex-col items-center justify-center p-3 border-2 border-dashed border-brand-500/40 hover:border-brand-600 rounded-xl bg-brand-50/50 hover:bg-brand-50 transition group">
+              <div class="flex items-center space-x-2 text-brand-800">
+                <i data-lucide="upload-cloud" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs font-bold" id="file-upload-status-text">ডিভাইস থেকে ছবি বেছে নিন</span>
+              </div>
+              <span class="text-[10px] text-gray-500 mt-0.5">JPG, PNG, WEBP (মোবাইল গ্যালারি বা ক্যামেরা)</span>
+              <input type="file" id="edit-prod-file" accept="image/*" class="hidden" onchange="handleProductImageUpload(event)">
+            </label>
+            
+            <!-- ছবি প্রিভিউ বক্স -->
+            <div id="image-preview-wrapper" class="relative w-14 h-14 rounded-xl border border-gray-200 overflow-hidden bg-gray-50 shrink-0 hidden">
+              <img id="image-preview" src="" alt="Preview" class="w-full h-full object-cover">
+              <button type="button" onclick="removeUploadedImage()" class="absolute top-0.5 right-0.5 bg-black/70 hover:bg-red-600 text-white rounded-full p-0.5 transition">
+                <i data-lucide="x" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+          <!-- হিডেন ইনপুটে Base64 ডেটা সংরক্ষিত থাকবে -->
+          <input type="hidden" id="edit-prod-image-base64">
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">সাইজ / ভ্যারিয়েন্ট (কমা দিয়ে লিখুন)</label>
-          <input type="text" id="edit-prod-variants" placeholder="যেমন: Size 38, Size 40, Size 42" class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+          <input type="text" id="edit-prod-variants" placeholder="Size 38, Size 40, Size 42" class="w-full px-3 py-1.5 sm:py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
           <span class="text-[10px] text-gray-400">প্রতিটি ভ্যারিয়েন্ট কমা (,) দিয়ে আলাদা করুন।</span>
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-gray-700 mb-1">বিবরণ (Description)</label>
-          <textarea id="edit-prod-desc" rows="2.5" placeholder="প্রোডাক্টের গুণগত মান ও বিস্তারিত..." class="w-full px-3 py-2 border rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none"></textarea>
+          <textarea id="edit-prod-desc" rows="2" placeholder="প্রোডাক্টের গুণগত মান ও বিস্তারিত..." class="w-full px-3 py-1.5 sm:py-2 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none"></textarea>
         </div>
 
-        <div class="pt-2">
-          <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs shadow-md transition">
+        <div class="pt-1.5">
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-xs shadow-md transition active:scale-95">
             সংরক্ষণ করুন (Save Product)
           </button>
         </div>
@@ -868,14 +896,13 @@
   </div>
 
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-brand-900 text-white text-xs font-medium px-4 py-2.5 rounded-xl shadow-xl flex items-center space-x-2 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-3">
-    <i data-lucide="check" class="w-4 h-4 text-brand-gold"></i>
+  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-brand-900 text-white text-xs font-medium px-4 py-2 rounded-xl shadow-xl flex items-center space-x-2 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-3">
+    <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
     <span id="toast-message">Notification</span>
   </div>
 
   <!-- JavaScript Application Logic -->
   <script>
-    // Global Shop Configuration & Admin Credentials
     const SHOP_CONFIG = {
       name: "TP RoverMart",
       whatsappNumber: "8801595306172",
@@ -887,7 +914,6 @@
       pass: "123456789"
     };
 
-    // Default Seed Products
     const DEFAULT_PRODUCTS = [
       {
         id: "RM-UNI-01",
@@ -1027,7 +1053,6 @@
       }
     ];
 
-    // Local Storage Databases
     let PRODUCTS = [];
     let ORDERS = [];
     let cart = [];
@@ -1036,7 +1061,6 @@
     let selectedModalVariant = "";
     let modalQuantity = 1;
 
-    // Category Label Helper
     function getCategoryLabel(catKey) {
       const map = {
         uniforms: "Scout Uniforms",
@@ -1052,9 +1076,7 @@
       return map[catKey] || "General Scout Gear";
     }
 
-    // Database Initialization
     function initializeDatabase() {
-      // Products
       const storedProds = localStorage.getItem("rovermart_products");
       if (!storedProds) {
         PRODUCTS = DEFAULT_PRODUCTS;
@@ -1067,7 +1089,6 @@
         }
       }
 
-      // Orders
       const storedOrders = localStorage.getItem("rovermart_orders");
       if (storedOrders) {
         try {
@@ -1100,7 +1121,6 @@
       }
     }
 
-    // Frontend Cart Handling
     function loadSavedCart() {
       try {
         const saved = localStorage.getItem("rovermart_cart");
@@ -1131,27 +1151,27 @@
 
       emptyState.classList.add("hidden");
       grid.innerHTML = items.map(p => `
-        <div class="group bg-white rounded-2xl border border-gray-100 hover:border-brand-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
-          <div class="relative w-full h-36 sm:h-52 bg-gray-100 overflow-hidden">
+        <div class="group bg-white rounded-xl sm:rounded-2xl border border-gray-100 hover:border-brand-200 overflow-hidden shadow-xs hover:shadow-md transition duration-200 flex flex-col">
+          <div class="relative w-full h-32 sm:h-52 bg-gray-100 overflow-hidden">
             <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=80'">
-            ${p.tag ? `<span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-900/90 backdrop-blur-xs text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded tracking-wide uppercase">${p.tag}</span>` : ''}
-            <span class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-xs text-brand-900 text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded shadow-xs truncate max-w-[80px] sm:max-w-none">${p.categoryLabel || getCategoryLabel(p.category)}</span>
+            ${p.tag ? `<span class="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 bg-brand-900/90 text-white text-[8px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded tracking-wide uppercase">${p.tag}</span>` : ''}
+            <span class="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 bg-white/90 text-brand-900 text-[8px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded shadow-xs truncate max-w-[70px] sm:max-w-none">${p.categoryLabel || getCategoryLabel(p.category)}</span>
           </div>
 
-          <div class="p-3 sm:p-4 flex-1 flex flex-col justify-between">
+          <div class="p-2.5 sm:p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-brand-700 transition line-clamp-1">${p.name}</h3>
+              <h3 class="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-brand-700 transition line-clamp-2 leading-tight">${p.name}</h3>
               <p class="text-[11px] sm:text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed hidden sm:block">${p.desc || ''}</p>
             </div>
 
-            <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-gray-100 flex items-center justify-between">
+            <div class="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100 flex items-center justify-between">
               <div>
-                <span class="text-sm sm:text-base font-black text-brand-900">${SHOP_CONFIG.currencySymbol}${p.price}</span>
-                ${p.oldPrice ? `<span class="text-[10px] sm:text-xs text-gray-400 line-through ml-1">${SHOP_CONFIG.currencySymbol}${p.oldPrice}</span>` : ''}
+                <span class="text-xs sm:text-base font-black text-brand-900">${SHOP_CONFIG.currencySymbol}${p.price}</span>
+                ${p.oldPrice ? `<span class="text-[9px] sm:text-xs text-gray-400 line-through ml-1">${SHOP_CONFIG.currencySymbol}${p.oldPrice}</span>` : ''}
               </div>
-              <button onclick="openOrderModal('${p.id}')" class="inline-flex items-center space-x-1 bg-brand-800 hover:bg-brand-700 text-white text-[11px] sm:text-xs font-bold px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl transition shadow-xs">
+              <button onclick="openOrderModal('${p.id}')" class="inline-flex items-center space-x-1 bg-brand-800 hover:bg-brand-700 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition active:scale-95">
                 <span>Order</span>
-                <i data-lucide="chevron-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                <i data-lucide="chevron-right" class="w-3 h-3"></i>
               </button>
             </div>
           </div>
@@ -1227,7 +1247,7 @@
       if (product.variants && product.variants.length > 0) {
         variantContainer.classList.remove("hidden");
         variantOptions.innerHTML = product.variants.map((v, i) => `
-          <button type="button" onclick="selectModalVariant('${v}')" class="variant-pill px-3 py-1.5 rounded-lg border text-xs font-semibold transition ${i === 0 ? 'bg-brand-800 text-white border-brand-800' : 'bg-gray-50 text-gray-700 border-gray-200'}">
+          <button type="button" onclick="selectModalVariant('${v}')" class="variant-pill px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition ${i === 0 ? 'bg-brand-800 text-white border-brand-800' : 'bg-gray-50 text-gray-700 border-gray-200'}">
             ${v}
           </button>
         `).join("");
@@ -1250,9 +1270,9 @@
       const pills = document.querySelectorAll(".variant-pill");
       pills.forEach(pill => {
         if (pill.textContent.trim() === variantName) {
-          pill.className = "variant-pill px-3 py-1.5 rounded-lg border text-xs font-semibold transition bg-brand-800 text-white border-brand-800";
+          pill.className = "variant-pill px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition bg-brand-800 text-white border-brand-800";
         } else {
-          pill.className = "variant-pill px-3 py-1.5 rounded-lg border text-xs font-semibold transition bg-gray-50 text-gray-700 border-gray-200";
+          pill.className = "variant-pill px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition bg-gray-50 text-gray-700 border-gray-200";
         }
       });
     }
@@ -1325,10 +1345,10 @@
 
       if (cart.length === 0) {
         container.innerHTML = `
-          <div class="text-center py-12 text-gray-400">
-            <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-2 opacity-50"></i>
+          <div class="text-center py-10 text-gray-400">
+            <i data-lucide="shopping-bag" class="w-10 h-10 mx-auto mb-2 opacity-50"></i>
             <p class="text-xs font-semibold text-gray-600">আপনার কার্ট খালি</p>
-            <p class="text-[11px] text-gray-400 mt-1">ক্যাটালগ থেকে যেকোনো পণ্য যোগ করুন</p>
+            <p class="text-[10px] text-gray-400 mt-1">পণ্য সিলেক্ট করে কার্টে যোগ করুন</p>
           </div>
         `;
         footer.classList.add("hidden");
@@ -1343,20 +1363,20 @@
         const itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
         return `
-          <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
-            <img src="${item.image}" alt="${item.name}" class="w-14 h-14 rounded-lg object-cover border border-gray-200" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&auto=format&fit=crop&q=80'">
+          <div class="flex items-center space-x-2.5 p-2.5 bg-gray-50 rounded-xl border border-gray-100">
+            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-cover border border-gray-200" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&auto=format&fit=crop&q=80'">
             <div class="flex-1 min-w-0">
               <h4 class="text-xs font-bold text-gray-900 truncate">${item.name}</h4>
-              <p class="text-[11px] text-gray-500">${item.variant} • ${SHOP_CONFIG.currencySymbol}${item.price}</p>
-              <div class="flex items-center space-x-2 mt-2">
-                <button onclick="updateCartItemQty(${index}, -1)" class="w-6 h-6 rounded bg-white border border-gray-200 text-xs font-bold flex items-center justify-center text-gray-700 hover:bg-gray-100">-</button>
+              <p class="text-[10px] text-gray-500">${item.variant} • ${SHOP_CONFIG.currencySymbol}${item.price}</p>
+              <div class="flex items-center space-x-1.5 mt-1.5">
+                <button onclick="updateCartItemQty(${index}, -1)" class="w-5 h-5 rounded bg-white border border-gray-200 text-xs font-bold flex items-center justify-center text-gray-700 hover:bg-gray-100">-</button>
                 <span class="text-xs font-black text-gray-900">${item.quantity}</span>
-                <button onclick="updateCartItemQty(${index}, 1)" class="w-6 h-6 rounded bg-white border border-gray-200 text-xs font-bold flex items-center justify-center text-gray-700 hover:bg-gray-100">+</button>
+                <button onclick="updateCartItemQty(${index}, 1)" class="w-5 h-5 rounded bg-white border border-gray-200 text-xs font-bold flex items-center justify-center text-gray-700 hover:bg-gray-100">+</button>
               </div>
             </div>
-            <div class="text-right flex flex-col justify-between items-end h-14">
+            <div class="text-right flex flex-col justify-between items-end h-12">
               <button onclick="removeCartItem(${index})" class="text-gray-400 hover:text-red-600 p-0.5">
-                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
               </button>
               <span class="text-xs font-black text-brand-900">${SHOP_CONFIG.currencySymbol}${itemTotal}</span>
             </div>
@@ -1410,9 +1430,6 @@
       document.getElementById("checkout-modal").classList.add("hidden");
     }
 
-    // ==========================================
-    // BACKEND ORDER SUBMISSION & PROCESSING
-    // ==========================================
     function handleOrderSubmission(e) {
       e.preventDefault();
 
@@ -1443,26 +1460,22 @@
         };
       });
 
-      // Construct New Order Record for Database
       const newOrder = {
         orderId: orderRef,
         customer: { name, phone, city, address, notes },
         items: orderItems,
         totalAmount: calculatedSubtotal,
-        status: "Pending", // Pending, Processing, Completed, Cancelled
+        status: "Pending",
         createdAt: new Date().toLocaleString('en-US', { timeZone: 'Asia/Dhaka' })
       };
 
-      // Save directly into Backend Database
       ORDERS.unshift(newOrder);
       saveOrdersToDB();
 
-      // Clear Shopping Cart
       cart = [];
       saveCart();
       closeCheckoutModal();
 
-      // Prepare Optional WhatsApp Backup URL
       let itemsText = "";
       newOrder.items.forEach((item, i) => {
         itemsText += `${i + 1}. *${item.name}* (Qty: ${item.quantity}, Size: ${item.variant}) - ৳${item.subtotal}\n`;
@@ -1479,16 +1492,14 @@
         `*Items:*\n${itemsText}` +
         `*Total Subtotal:* ৳${calculatedSubtotal}\n` +
         `------------------------------------\n` +
-        `অর্ডারটি আপনাদের ব্যাকএন্ড সিস্টেমে সেভ করা হয়েছে। ধন্যবাদ!`;
+        `অর্ডারটি সিস্টেম ব্যাকএন্ডে সেভ হয়েছে। ধন্যবাদ!`;
 
       const whatsappUrl = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
 
-      // Show Order Success Modal
       document.getElementById("success-order-id").textContent = orderRef;
       document.getElementById("success-wa-btn").onclick = () => window.open(whatsappUrl, "_blank");
       document.getElementById("order-success-modal").classList.remove("hidden");
 
-      // Reset form
       document.getElementById("checkout-form").reset();
     }
 
@@ -1519,9 +1530,6 @@
       }, 3000);
     }
 
-    // ==========================================
-    // ADMIN AUTHENTICATION & PORTAL MANAGEMENT
-    // ==========================================
     function isAdminLoggedIn() {
       return sessionStorage.getItem("tp_admin_session") === "true";
     }
@@ -1584,12 +1592,12 @@
       tabs.forEach(t => {
         document.getElementById(`admin-view-${t}`).classList.add("hidden");
         const btn = document.getElementById(`tab-btn-${t}`);
-        btn.className = "px-4 py-2 font-bold text-xs rounded-lg text-gray-600 hover:bg-gray-100 transition flex items-center space-x-1.5";
+        btn.className = "px-3 sm:px-4 py-1.5 sm:py-2 font-bold text-xs rounded-lg text-gray-600 hover:bg-gray-100 transition flex items-center space-x-1.5 whitespace-nowrap";
       });
 
       document.getElementById(`admin-view-${tabName}`).classList.remove("hidden");
       const activeBtn = document.getElementById(`tab-btn-${tabName}`);
-      activeBtn.className = "px-4 py-2 font-bold text-xs rounded-lg bg-brand-50 text-brand-800 transition flex items-center space-x-1.5";
+      activeBtn.className = "px-3 sm:px-4 py-1.5 sm:py-2 font-bold text-xs rounded-lg bg-brand-50 text-brand-800 transition flex items-center space-x-1.5 whitespace-nowrap";
 
       if (tabName === 'dashboard') renderAdminDashboard();
       if (tabName === 'orders') renderAdminOrders();
@@ -1597,7 +1605,6 @@
       lucide.createIcons();
     }
 
-    // Render Admin Views
     function renderAdminDashboard() {
       const totalSales = ORDERS.reduce((sum, o) => sum + (o.status !== 'Cancelled' ? o.totalAmount : 0), 0);
       const pendingCount = ORDERS.filter(o => o.status === 'Pending').length;
@@ -1614,7 +1621,7 @@
       const recent = ORDERS.slice(0, 5);
 
       if (recent.length === 0) {
-        recentContainer.innerHTML = `<p class="text-xs text-gray-400 py-4 text-center">এখনো কোনো অর্ডার আসেনি।</p>`;
+        recentContainer.innerHTML = `<p class="text-xs text-gray-400 py-3 text-center">এখনো কোনো অর্ডার আসেনি।</p>`;
         return;
       }
 
@@ -1622,22 +1629,20 @@
         <table class="w-full text-left text-xs">
           <thead class="bg-gray-50 text-gray-600 border-b">
             <tr>
-              <th class="p-2.5">অর্ডার আইডি</th>
-              <th class="p-2.5">গ্রাহক</th>
-              <th class="p-2.5">ফোন</th>
-              <th class="p-2.5">মোট মূল্য</th>
-              <th class="p-2.5">স্ট্যাটাস</th>
+              <th class="p-2">অর্ডার আইডি</th>
+              <th class="p-2">গ্রাহক</th>
+              <th class="p-2">মূল্য</th>
+              <th class="p-2">স্ট্যাটাস</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100">
             ${recent.map(o => `
               <tr>
-                <td class="p-2.5 font-bold text-brand-900">${o.orderId}</td>
-                <td class="p-2.5">${o.customer.name}</td>
-                <td class="p-2.5">${o.customer.phone}</td>
-                <td class="p-2.5 font-bold">${SHOP_CONFIG.currencySymbol}${o.totalAmount}</td>
-                <td class="p-2.5">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold ${                     o.status === 'Completed' ? 'bg-emerald-100 text-emerald-800' :                     o.status === 'Processing' ? 'bg-blue-100 text-blue-800' :                     o.status === 'Cancelled' ? 'bg-red-100 text-red-800' :                     'bg-amber-100 text-amber-800'                   }">${o.status}</span>
+                <td class="p-2 font-bold text-brand-900">${o.orderId}</td>
+                <td class="p-2">${o.customer.name}</td>
+                <td class="p-2 font-bold">${SHOP_CONFIG.currencySymbol}${o.totalAmount}</td>
+                <td class="p-2">
+                  <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${                     o.status === 'Completed' ? 'bg-emerald-100 text-emerald-800' :                     o.status === 'Processing' ? 'bg-blue-100 text-blue-800' :                     o.status === 'Cancelled' ? 'bg-red-100 text-red-800' :                     'bg-amber-100 text-amber-800'                   }">${o.status}</span>
                 </td>
               </tr>
             `).join('')}
@@ -1652,10 +1657,9 @@
 
       if (ORDERS.length === 0) {
         container.innerHTML = `
-          <div class="bg-white p-12 text-center rounded-2xl border border-gray-200">
-            <i data-lucide="inbox" class="w-12 h-12 text-gray-300 mx-auto mb-2"></i>
-            <h4 class="text-sm font-bold text-gray-700">কোনো অর্ডার ডাটাবেজে পাওয়া যায়নি</h4>
-            <p class="text-xs text-gray-400 mt-1">কাস্টমার অর্ডার সাবমিট করলে তা স্বয়ংক্রিয়ভাবে এখানে চলে আসবে।</p>
+          <div class="bg-white p-8 text-center rounded-2xl border border-gray-200">
+            <i data-lucide="inbox" class="w-10 h-10 text-gray-300 mx-auto mb-2"></i>
+            <h4 class="text-xs sm:text-sm font-bold text-gray-700">কোনো অর্ডার ডাটাবেজে পাওয়া যায়নি</h4>
           </div>
         `;
         lucide.createIcons();
@@ -1663,36 +1667,36 @@
       }
 
       container.innerHTML = ORDERS.map((order, idx) => `
-        <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-xs">
-          <div class="flex flex-col sm:flex-row justify-between sm:items-center pb-3 border-b border-gray-100 gap-2">
+        <div class="bg-white rounded-xl border border-gray-200 p-3.5 sm:p-5 shadow-xs">
+          <div class="flex flex-col sm:flex-row justify-between sm:items-center pb-2.5 border-b border-gray-100 gap-2">
             <div>
               <div class="flex items-center space-x-2">
-                <span class="text-sm font-black text-brand-900">#${order.orderId}</span>
-                <span class="text-[10px] text-gray-400 font-medium">${order.createdAt}</span>
+                <span class="text-xs sm:text-sm font-black text-brand-900">#${order.orderId}</span>
+                <span class="text-[9px] sm:text-[10px] text-gray-400 font-medium">${order.createdAt}</span>
               </div>
               <p class="text-xs text-gray-600 mt-0.5"><span class="font-bold">${order.customer.name}</span> (${order.customer.phone}) — ${order.customer.city}</p>
             </div>
             <div class="flex items-center space-x-2">
-              <select onchange="updateOrderStatus(${idx}, this.value)" class="text-xs font-semibold px-2.5 py-1.5 border rounded-lg bg-gray-50 focus:outline-none">
+              <select onchange="updateOrderStatus(${idx}, this.value)" class="text-xs font-semibold px-2 py-1 border rounded-lg bg-gray-50 focus:outline-none">
                 <option value="Pending" ${order.status === 'Pending' ? 'selected' : ''}>Pending</option>
                 <option value="Processing" ${order.status === 'Processing' ? 'selected' : ''}>Processing</option>
                 <option value="Completed" ${order.status === 'Completed' ? 'selected' : ''}>Completed</option>
                 <option value="Cancelled" ${order.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
               </select>
-              <button onclick="deleteSingleOrder(${idx})" class="p-1.5 text-gray-400 hover:text-red-600 rounded-lg hover:bg-gray-100 transition">
+              <button onclick="deleteSingleOrder(${idx})" class="p-1 text-gray-400 hover:text-red-600 rounded-lg hover:bg-gray-100 transition">
                 <i data-lucide="trash-2" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
 
-          <div class="py-3">
-            <h5 class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-2">অর্ডারকৃত পণ্যসমূহ:</h5>
-            <div class="space-y-1.5">
+          <div class="py-2.5">
+            <h5 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">অর্ডারকৃত পণ্যসমূহ:</h5>
+            <div class="space-y-1">
               ${order.items.map(item => `
-                <div class="flex justify-between items-center text-xs bg-gray-50 p-2 rounded-lg">
+                <div class="flex justify-between items-center text-xs bg-gray-50 p-1.5 rounded-lg">
                   <div>
                     <span class="font-bold text-gray-800">${item.name}</span>
-                    <span class="text-[10px] text-gray-500 ml-2">(${item.variant}) x${item.quantity}</span>
+                    <span class="text-[10px] text-gray-500 ml-1.5">(${item.variant}) x${item.quantity}</span>
                   </div>
                   <span class="font-bold text-brand-900">৳${item.subtotal}</span>
                 </div>
@@ -1700,16 +1704,16 @@
             </div>
           </div>
 
-          <div class="pt-3 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs gap-2">
+          <div class="pt-2.5 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs gap-2">
             <div>
-              <p class="text-gray-500"><span class="font-semibold text-gray-700">ঠিকানা:</span> ${order.customer.address}</p>
-              ${order.customer.notes ? `<p class="text-amber-700 font-medium mt-0.5"><span class="font-semibold">নোট:</span> ${order.customer.notes}</p>` : ''}
+              <p class="text-gray-500 text-[11px]"><span class="font-semibold text-gray-700">ঠিকানা:</span> ${order.customer.address}</p>
+              ${order.customer.notes ? `<p class="text-amber-700 font-medium text-[11px] mt-0.5"><span class="font-semibold">নোট:</span> ${order.customer.notes}</p>` : ''}
             </div>
-            <div class="flex items-center space-x-3">
-              <span class="text-xs text-gray-500">মোট মূল্য: <span class="text-sm font-black text-brand-900">৳${order.totalAmount}</span></span>
-              <a href="https://wa.me/88${order.customer.phone}?text=${encodeURIComponent(`আসসালামু আলাইকুম ${order.customer.name}! TP RoverMart থেকে আপনার অর্ডার #${order.orderId} প্রসঙ্গে যোগাযোগ করছি।`)}" target="_blank" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-[11px] flex items-center space-x-1">
-                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                <span>গ্রাহককে WhatsApp করুন</span>
+            <div class="flex items-center space-x-2.5 w-full sm:w-auto justify-between sm:justify-end">
+              <span class="text-xs text-gray-500">মোট: <span class="font-black text-brand-900">৳${order.totalAmount}</span></span>
+              <a href="https://wa.me/88${order.customer.phone}?text=${encodeURIComponent(`আসসালামু আলাইকুম ${order.customer.name}! TP RoverMart থেকে আপনার অর্ডার #${order.orderId} প্রসঙ্গে যোগাযোগ করছি।`)}" target="_blank" class="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-[10px] sm:text-[11px] flex items-center space-x-1">
+                <i data-lucide="message-circle" class="w-3 h-3"></i>
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>
@@ -1723,12 +1727,12 @@
       if (ORDERS[index]) {
         ORDERS[index].status = newStatus;
         saveOrdersToDB();
-        showToast(`অর্ডার স্ট্যাটাস আপডেট: ${newStatus}`);
+        showToast(`স্ট্যাটাস আপডেট: ${newStatus}`);
       }
     }
 
     function deleteSingleOrder(index) {
-      if (confirm("আপনি কি নিশ্চিত এই অর্ডারটি মুছে ফেলতে চান?")) {
+      if (confirm("অর্ডারটি মুছে ফেলতে চান?")) {
         ORDERS.splice(index, 1);
         saveOrdersToDB();
         renderAdminOrders();
@@ -1737,7 +1741,7 @@
     }
 
     function clearAllOrders() {
-      if (confirm("সতর্কতা: এটি সকল অর্ডার ডাটাবেজ থেকে মুছে ফেলবে! আপনি কি নিশ্চিত?")) {
+      if (confirm("সকল অর্ডার মুছে ফেলবেন?")) {
         ORDERS = [];
         saveOrdersToDB();
         renderAdminOrders();
@@ -1745,7 +1749,6 @@
       }
     }
 
-    // Product CRUD Management
     function renderAdminProducts() {
       const container = document.getElementById("admin-products-table-container");
       document.getElementById("admin-products-count-badge").textContent = PRODUCTS.length;
@@ -1754,34 +1757,30 @@
         <table class="w-full text-left text-xs">
           <thead class="bg-gray-50 text-gray-600 border-b">
             <tr>
-              <th class="p-3">প্রোডাক্ট</th>
-              <th class="p-3">ক্যাটাগরি</th>
-              <th class="p-3">মূল্য</th>
-              <th class="p-3">ভ্যারিয়েন্ট</th>
-              <th class="p-3 text-right">একশন</th>
+              <th class="p-2.5">প্রোডাক্ট</th>
+              <th class="p-2.5">ক্যাটাগরি</th>
+              <th class="p-2.5">মূল্য</th>
+              <th class="p-2.5 text-right">একশন</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100">
             ${PRODUCTS.map((prod, idx) => `
               <tr class="hover:bg-gray-50/50">
-                <td class="p-3 flex items-center space-x-3">
-                  <img src="${prod.image}" class="w-10 h-10 rounded-lg object-cover border" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&auto=format&fit=crop&q=80'">
-                  <div>
-                    <h5 class="font-bold text-gray-900">${prod.name}</h5>
-                    <span class="text-[10px] text-gray-400">ID: ${prod.id}</span>
+                <td class="p-2.5 flex items-center space-x-2">
+                  <img src="${prod.image}" class="w-8 h-8 rounded-lg object-cover border" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&auto=format&fit=crop&q=80'">
+                  <div class="min-w-0">
+                    <h5 class="font-bold text-gray-900 truncate max-w-[120px] sm:max-w-none">${prod.name}</h5>
+                    <span class="text-[9px] text-gray-400">ID: ${prod.id}</span>
                   </div>
                 </td>
-                <td class="p-3">${prod.categoryLabel || getCategoryLabel(prod.category)}</td>
-                <td class="p-3 font-bold text-brand-900">
-                  ৳${prod.price}${prod.oldPrice ? `<span class="line-through text-gray-400 text-[10px]">৳${prod.oldPrice}</span>` : ''}
-                </td>
-                <td class="p-3 text-gray-500">${prod.variants ? prod.variants.join(', ') : 'Single'}</td>
-                <td class="p-3 text-right">
-                  <div class="flex items-center justify-end space-x-1.5">
-                    <button onclick="openProductEditModal(${idx})" class="p-1.5 bg-brand-50 text-brand-800 hover:bg-brand-100 rounded-lg">
+                <td class="p-2.5 whitespace-nowrap">${prod.categoryLabel || getCategoryLabel(prod.category)}</td>
+                <td class="p-2.5 font-bold text-brand-900 whitespace-nowrap">৳${prod.price}</td>
+                <td class="p-2.5 text-right whitespace-nowrap">
+                  <div class="flex items-center justify-end space-x-1">
+                    <button onclick="openProductEditModal(${idx})" class="p-1 bg-brand-50 text-brand-800 hover:bg-brand-100 rounded-lg">
                       <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
                     </button>
-                    <button onclick="deleteProduct(${idx})" class="p-1.5 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg">
+                    <button onclick="deleteProduct(${idx})" class="p-1 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg">
                       <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
                     </button>
                   </div>
@@ -1795,12 +1794,69 @@
       lucide.createIcons();
     }
 
+    // সরাসরি ইমেজ ফাইল প্রসেসিং এবং অপ্টিমাইজেশন (Base64)
+    function handleProductImageUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        alert("অনুগ্রহ করে একটি ছবি নির্বাচন করুন!");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.src = e.target.result;
+        img.onload = function() {
+          // ক্লায়েন্ট-সাইড অপ্টিমাইজেশন (লোকালস্টোরেজের লিমিট সুরক্ষিত রাখতে রিসাইজ)
+          const canvas = document.createElement("canvas");
+          const maxDim = 800; // সর্বোচ্চ 800px মাপ
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height && width > maxDim) {
+            height = Math.round((height * maxDim) / width);
+            width = maxDim;
+          } else if (height > maxDim) {
+            width = Math.round((width * maxDim) / height);
+            height = maxDim;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // কম্প্রেসড ইমেজ ডেটা
+          const compressedDataUrl = canvas.toDataURL("image/jpeg", 0.82);
+
+          // প্রিভিউ এবং ইনপুটে মান সেট করা
+          document.getElementById("edit-prod-image-base64").value = compressedDataUrl;
+          document.getElementById("image-preview").src = compressedDataUrl;
+          document.getElementById("image-preview-wrapper").classList.remove("hidden");
+          document.getElementById("file-upload-status-text").textContent = "ছবি পরিবর্তন করুন";
+          lucide.createIcons();
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function removeUploadedImage() {
+      document.getElementById("edit-prod-file").value = "";
+      document.getElementById("edit-prod-image-base64").value = "";
+      document.getElementById("image-preview").src = "";
+      document.getElementById("image-preview-wrapper").classList.add("hidden");
+      document.getElementById("file-upload-status-text").textContent = "ডিভাইস থেকে ছবি বেছে নিন";
+    }
+
     function openProductEditModal(index) {
       const modal = document.getElementById("admin-product-edit-modal");
       const title = document.getElementById("product-modal-title");
       const form = document.getElementById("product-edit-form");
 
       form.reset();
+      removeUploadedImage();
 
       if (index !== null && PRODUCTS[index]) {
         const prod = PRODUCTS[index];
@@ -1811,7 +1867,15 @@
         document.getElementById("edit-prod-tag").value = prod.tag || "";
         document.getElementById("edit-prod-price").value = prod.price;
         document.getElementById("edit-prod-oldprice").value = prod.oldPrice || "";
-        document.getElementById("edit-prod-image").value = prod.image;
+        
+        // বিদ্যমান ছবি প্রিভিউতে লোড
+        if (prod.image) {
+          document.getElementById("edit-prod-image-base64").value = prod.image;
+          document.getElementById("image-preview").src = prod.image;
+          document.getElementById("image-preview-wrapper").classList.remove("hidden");
+          document.getElementById("file-upload-status-text").textContent = "নতুন ছবি আপলোড করুন";
+        }
+
         document.getElementById("edit-prod-variants").value = prod.variants ? prod.variants.join(", ") : "";
         document.getElementById("edit-prod-desc").value = prod.desc || "";
       } else {
@@ -1820,6 +1884,7 @@
       }
 
       modal.classList.remove("hidden");
+      lucide.createIcons();
     }
 
     function closeProductEditModal() {
@@ -1836,14 +1901,19 @@
       const price = parseFloat(document.getElementById("edit-prod-price").value);
       const oldPriceVal = document.getElementById("edit-prod-oldprice").value;
       const oldPrice = oldPriceVal ? parseFloat(oldPriceVal) : null;
-      const image = document.getElementById("edit-prod-image").value.trim();
+      
+      // ফাইল থেকে পাওয়া Base64 ইমেজ
+      const image = document.getElementById("edit-prod-image-base64").value.trim();
+      if (!image) {
+        alert("অনুগ্রহ করে প্রোডাক্টের জন্য একটি ছবি আপলোড করুন!");
+        return;
+      }
+
       const variantsRaw = document.getElementById("edit-prod-variants").value.trim();
       const desc = document.getElementById("edit-prod-desc").value.trim();
-
       const variants = variantsRaw ? variantsRaw.split(",").map(v => v.trim()).filter(Boolean) : ["Standard"];
 
       if (id) {
-        // Edit Existing
         const idx = PRODUCTS.findIndex(p => p.id === id);
         if (idx > -1) {
           PRODUCTS[idx] = {
@@ -1858,10 +1928,9 @@
             variants,
             desc
           };
-          showToast("প্রোডাক্ট তথ্য সফলভাবে আপডেট হয়েছে!");
+          showToast("প্রোডাক্ট আপডেট সম্পন্ন!");
         }
       } else {
-        // Add New
         const newId = "RM-NEW-" + Math.floor(1000 + Math.random() * 9000);
         PRODUCTS.unshift({
           id: newId,
@@ -1875,7 +1944,7 @@
           variants,
           desc
         });
-        showToast("নতুন প্রোডাক্ট ইনভেন্টরিতে যোগ করা হয়েছে!");
+        showToast("নতুন প্রোডাক্ট যুক্ত হয়েছে!");
       }
 
       saveProductsToDB();
@@ -1883,14 +1952,13 @@
     }
 
     function deleteProduct(index) {
-      if (confirm("আপনি কি নিশ্চিত এই প্রোডাক্টটি মুছে ফেলতে চান?")) {
+      if (confirm("প্রোডাক্টটি ডিলিট করতে চান?")) {
         PRODUCTS.splice(index, 1);
         saveProductsToDB();
-        showToast("প্রোডাক্টটি ডিলিট করা হয়েছে।");
+        showToast("প্রোডাক্ট মুছে ফেলা হয়েছে।");
       }
     }
 
-    // App Initialization
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("current-year").textContent = new Date().getFullYear();
       initializeDatabase();
