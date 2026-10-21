@@ -425,8 +425,8 @@
           <div class="w-9 h-9 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-3">
             <i data-lucide="database" class="w-4.5 h-4.5"></i>
           </div>
-          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-1">Live Backend Storage</h3>
-          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">প্রতিটি অর্ডার স্বয়ংক্রিয়ভাবে আমাদের স্টোর ডাটাবেজে রেকর্ড করা হয়।</p>
+          <h3 class="text-xs sm:text-sm font-bold text-brand-900 mb-1">Browser Storage</h3>
+          <p class="text-[11px] sm:text-xs text-gray-600 leading-relaxed">এই ডেমোতে পণ্য ও অর্ডার আপনার ব্রাউজারের localStorage-এ থাকে; সার্ভার ডাটাবেজে পাঠানো হয় না।</p>
         </div>
 
         <div class="bg-white p-4.5 rounded-2xl border border-emerald-100 shadow-xs">
@@ -1075,10 +1075,8 @@
       nagadNumber: "01595306172"
     };
 
-    const ADMIN_CREDENTIALS = {
-      user: "dev-TP",
-      pass: "123456789"
-    };
+    // Admin authentication must be implemented on a trusted server.
+    // Never ship admin credentials or authorization flags in browser code.
 
     const DEFAULT_PRODUCTS = [
       {
@@ -1654,7 +1652,9 @@
       const methodRadio = document.querySelector('input[name="payment_method"]:checked');
       const paymentMethod = methodRadio ? methodRadio.value : "bKash";
 
-      const orderRef = "TP-" + Math.floor(100000 + Math.random() * 900000);
+      const orderBytes = new Uint32Array(1);
+      crypto.getRandomValues(orderBytes);
+      const orderRef = "TP-" + String(orderBytes[0] % 100000000).padStart(8, "0");
       let calculatedSubtotal = 0;
 
       const orderItems = cart.map(item => {
@@ -1714,7 +1714,7 @@
         `*Items Ordered:*\n${itemsText}` +
         `*Total Subtotal:* ৳${calculatedSubtotal}\n` +
         `------------------------------------\n` +
-        `পেমেন্ট ও অর্ডারটি সিস্টেম ব্যাকএন্ডে সংরক্ষিত হয়েছে।`;
+        `নোট: এই সাইটের ডেমো অর্ডারটি শুধু এই ব্রাউজারে সংরক্ষিত হয়েছে; ব্যাকএন্ডে পাঠানো হয়নি।`;
 
       const whatsappUrl = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
 
@@ -1730,6 +1730,16 @@
 
     function closeOrderSuccessModal() {
       document.getElementById("order-success-modal").classList.add("hidden");
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      })[character]);
     }
 
     // --- Order Tracking Logic ---
@@ -1777,18 +1787,16 @@
           <div class="flex items-center justify-between pb-2 border-b border-gray-200">
             <div>
               <span class="text-[10px] text-gray-500 font-semibold">অর্ডার আইডি</span>
-              <h4 class="text-sm font-black text-brand-900">${order.orderId}</h4>
+              <h4 class="text-sm font-black text-brand-900">${escapeHtml(order.orderId)}</h4>
             </div>
             <span class="px-2.5 py-1 rounded-full text-[11px] font-bold border ${statusBadgeClass}">
-              ${order.status}
+              ${escapeHtml(order.status)}
             </span>
           </div>
 
           <div class="text-xs space-y-1">
-            <p><span class="font-semibold text-gray-700">গ্রাহক:</span> ${order.customer.name}</p>
-            <p><span class="font-semibold text-gray-700">তারিখ:</span> ${order.createdAt}</p>
-            <p><span class="font-semibold text-gray-700">পেমেন্ট:</span> ${order.payment ? order.payment.method : 'bKash'} (TrxID: <span class="font-mono font-bold">${order.payment ? order.payment.trxId : 'N/A'}</span>)</p>
-            <p><span class="font-semibold text-gray-700">মোট বিল:</span> <span class="font-bold text-brand-900">৳${order.totalAmount}</span></p>
+            <p><span class="font-semibold text-gray-700">তারিখ:</span> ${escapeHtml(order.createdAt)}</p>
+            <p><span class="font-semibold text-gray-700">মোট বিল:</span> <span class="font-bold text-brand-900">৳${Number(order.totalAmount) || 0}</span></p>
           </div>
 
           <div class="pt-2 border-t border-gray-200">
@@ -1796,8 +1804,8 @@
             <ul class="text-[11px] text-gray-600 space-y-0.5">
               ${order.items.map(item => `
                 <li class="flex justify-between">
-                  <span>• ${item.name} (${item.variant}) x${item.quantity}</span>
-                  <span class="font-bold text-gray-800">৳${item.subtotal}</span>
+                  <span>• ${escapeHtml(item.name)} (${escapeHtml(item.variant)}) x${Number(item.quantity) || 0}</span>
+                  <span class="font-bold text-gray-800">৳${Number(item.subtotal) || 0}</span>
                 </li>
               `).join('')}
             </ul>
@@ -1834,7 +1842,9 @@
     }
 
     function isAdminLoggedIn() {
-      return sessionStorage.getItem("tp_admin_session") === "true";
+      // Client-side session flags are not authentication. Keep admin features
+      // disabled until server-side authentication and authorization are configured.
+      return false;
     }
 
     function checkAdminStatusAndOpen() {
@@ -1858,19 +1868,9 @@
 
     function handleAdminLogin(e) {
       e.preventDefault();
-      const user = document.getElementById("admin-user-input").value.trim();
-      const pass = document.getElementById("admin-pass-input").value.trim();
       const err = document.getElementById("admin-login-error");
-
-      if (user === ADMIN_CREDENTIALS.user && pass === ADMIN_CREDENTIALS.pass) {
-        sessionStorage.setItem("tp_admin_session", "true");
-        toggleAdminLoginModal(false);
-        document.getElementById("admin-login-form").reset();
-        toggleAdminPanel(true);
-        showToast("সফলভাবে অ্যাডমিন লগইন সম্পন্ন হয়েছে!");
-      } else {
-        err.classList.remove("hidden");
-      }
+      err.textContent = "নিরাপদ সার্ভার-সাইড লগইন যুক্ত না হওয়া পর্যন্ত অ্যাডমিন প্যানেল বন্ধ রাখা হয়েছে।";
+      err.classList.remove("hidden");
     }
 
     function handleAdminLogout() {
