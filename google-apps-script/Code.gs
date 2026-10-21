@@ -174,9 +174,9 @@ function createOrder_(payload) {
     const paymentSheet = ss.getSheetByName(SHEETS.payments);
     if (!orderSheet || !itemSheet || !trackingSheet || !paymentSheet) throw publicError_('Backend setup is incomplete. Please contact the shop.');
 
-    orderSheet.appendRow([orderId, now, name, phone, address, total, status, tokenHash, method, senderNumber, transactionId, normalized.length]);
+    orderSheet.appendRow([orderId, now, sheetText_(name), sheetText_(phone), sheetText_(address), total, status, tokenHash, method, sheetText_(senderNumber), sheetText_(transactionId), normalized.length]);
     const itemRows = normalized.map(function(item) {
-      return [orderId, item.id, item.name, item.variant, item.quantity, item.price, item.price * item.quantity];
+      return [orderId, item.id, sheetText_(item.name), sheetText_(item.variant), item.quantity, item.price, item.price * item.quantity];
     });
     itemSheet.getRange(itemSheet.getLastRow() + 1, 1, itemRows.length, HEADERS.OrderItems.length).setValues(itemRows);
     trackingSheet.appendRow([orderId, now, status, 'Order received']);
@@ -245,7 +245,7 @@ function digest_(value) {
     .map(function(b) { const n = (b + 256) % 256; return ('0' + n.toString(16)).slice(-2); }).join('');
 }
 
-function cleanText_(value, maxLength) {
+function sheetText_(value) {\n  const text = String(value == null ? '' : value);\n  // Prevent user-controlled values from being interpreted as spreadsheet formulas.\n  return /^[=+@\\-\\t\\r]/.test(text) ? "'" + text : text;\n}\n\nfunction cleanText_(value, maxLength) {
   return String(value == null ? '' : value).replace(/[\u0000-\u001F\u007F]/g, ' ').trim().substring(0, maxLength);
 }
 
